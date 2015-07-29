@@ -42,6 +42,8 @@
             $('#shorttag-' + tmp).text(tmp4);
         });
 
+        
+
          /*save to the shorttag div text*/
         $('#sortable').on("click", '.pp-text', function (event) {
             var tmp = $(this).attr("mid");
@@ -132,6 +134,17 @@
 
             $('#assets').slideDown();
 
+        });
+
+        $('#add-code').click(function (event) {
+            $.ajax({
+                    url: '<?php echo site_url("shortcodes/code"); ?>',
+                    type: 'post',
+                    data: {},
+                    success: function (data) {
+                        $('#sortable').append(data);
+                    }
+                });
         });
 
         $('.ig-click').click(function (event) {

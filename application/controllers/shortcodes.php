@@ -85,6 +85,13 @@ class Shortcodes extends CI_Controller {
 
 	}
 
+	public function code()
+	{
+		include('./resources/shortcodes/my_codes.php');
+		echo do_shortcode("[col foo=4][code]".'sss'."[/code][/col]");
+
+	}
+
 	 /**
 	  *  @Description: add slider block
 	  *       @Params: params

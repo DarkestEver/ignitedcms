@@ -65,7 +65,7 @@
 						 <img class='img-responsive' src='$content' alt='image' />
 
 							
-						</form> 
+						
 						<div class='image'></div>
 					</div> 
 					<div class='shorttag' id='shorttag-$id' style='display:none;'>[col foo='{$atts['foo']}'][img src='$content'][/img]{$sd}</div> 
@@ -79,8 +79,11 @@
 
 	add_shortcode('img', 'img_func');
 
+	
 
 
+
+	
 
 
 

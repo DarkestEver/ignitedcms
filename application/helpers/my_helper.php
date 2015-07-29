@@ -49,7 +49,7 @@ if ( ! function_exists('my_username'))
     {
         //check if session is set
         $CI =& get_instance();
-        if($CI->session->userdata('userid') !== FALSE)
+        if($CI->session->userdata('userid') !== "FALSE")
         {
           $userid = $CI->session->userdata('userid');
 

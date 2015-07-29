@@ -53,7 +53,12 @@
     <style type="text/css">
 
        
-
+        pre{
+            
+            color: #E0604E;
+            font-size: 14px;
+            background-color: #FDEEEE;
+        }
 
 
 

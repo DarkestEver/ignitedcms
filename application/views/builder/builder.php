@@ -162,7 +162,7 @@
 
             <button type="submit" class="btn btn-white btn-s-xs " id="add-slider">Add Slider Block</button>
 
-            
+            <button type="submit" class="btn btn-white btn-s-xs " id="add-code">Add code Block</button>
         </div>
         
         <div class="panel-body">
