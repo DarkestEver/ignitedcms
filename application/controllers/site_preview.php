@@ -46,10 +46,10 @@ class Site_preview extends CI_Controller {
 
 		$data['content'] = do_shortcode($shorttag);
 
-		$this->load->view('sitepreview/header');
-		$this->load->view('sitepreview/body',$data);
-		$this->load->view('builder/page_preview',$data);
-		$this->load->view('sitepreview/footer');
+		$this->load->view('custom/header');
+		$this->load->view('custom/body',$data);
+		$this->load->view('admin/builder/page_preview',$data);
+		$this->load->view('custom/footer');
 
 	}
 
@@ -80,10 +80,10 @@ class Site_preview extends CI_Controller {
 
 		$data['menu'] = $menu4;
 		
-		$this->load->view('sitepreview/header');
-		$this->load->view('sitepreview/body',$data);
-		$this->load->view('blog/blog',$data); 
-		$this->load->view('sitepreview/footer');
+		$this->load->view('custom/header');
+		$this->load->view('custom/body',$data);
+		$this->load->view('admin/blog/blog',$data); 
+		$this->load->view('custom/footer');
 
 	}
 

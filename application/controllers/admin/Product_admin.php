@@ -36,10 +36,10 @@ class Product_admin extends CI_Controller {
 
 		$data['query'] = $query;
 
-		$this->load->view('header');
-		$this->load->view('body');
-		$this->load->view('product_admin/dashboard',$data); 
-		$this->load->view('footer');
+		$this->load->view('admin/header');
+		$this->load->view('admin/body');
+		$this->load->view('admin/product_admin/dashboard',$data); 
+		$this->load->view('admin/footer');
 	}
 
 	 /**
@@ -70,10 +70,10 @@ class Product_admin extends CI_Controller {
 
 		$data['query'] = $query;
 
-		$this->load->view('header');
-		$this->load->view('body');
-		$this->load->view('product_admin/add_product',$data); 
-		$this->load->view('product_admin/footer-add-product');
+		$this->load->view('admin/header');
+		$this->load->view('admin/body');
+		$this->load->view('admin/product_admin/add_product',$data); 
+		$this->load->view('admin/product_admin/footer-add-product');
 	}
 
 	public function edit_product($productid)
@@ -92,10 +92,10 @@ class Product_admin extends CI_Controller {
 		$data['query'] = $query;
 		$data['id']    = $productid;
 
-		$this->load->view('header');
-		$this->load->view('body');
-		$this->load->view('product_admin/edit-product',$data); 
-		$this->load->view('product_admin/footer-edit-product',$data);
+		$this->load->view('admin/header');
+		$this->load->view('admin/body');
+		$this->load->view('admin/product_admin/edit-product',$data); 
+		$this->load->view('admin/product_admin/footer-edit-product',$data);
 
 
 	}
@@ -111,10 +111,10 @@ class Product_admin extends CI_Controller {
 		
 		$data['id'] = $productid;
 
-		$this->load->view('header');
-		$this->load->view('body');
-		$this->load->view('product_admin/image',$data); 
-		$this->load->view('footer');
+		$this->load->view('admin/header');
+		$this->load->view('admin/body');
+		$this->load->view('admin/product_admin/image',$data); 
+		$this->load->view('admin/footer');
 
 
 	}
@@ -184,10 +184,10 @@ class Product_admin extends CI_Controller {
 		
 		$data['id'] = $productid;
 
-		$this->load->view('header');
-		$this->load->view('body');
-		$this->load->view('product_admin/spec',$data); 
-		$this->load->view('footer');
+		$this->load->view('admin/header');
+		$this->load->view('admin/body');
+		$this->load->view('admin/product_admin/spec',$data); 
+		$this->load->view('admin/footer');
 
 
 	}

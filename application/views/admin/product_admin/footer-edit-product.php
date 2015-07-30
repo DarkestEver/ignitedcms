@@ -1,5 +1,5 @@
      
-   <?php $this->load->view('footer-map');?>
+   <?php $this->load->view('admin/footer-map');?>
     </section>        
   </section> 
   
@@ -73,7 +73,7 @@
 
             $.ajax({
                 type: "POST",
-                url: "<?php echo site_url('product_admin/actual_insert_product'); ?>",
+                url: '<?php echo site_url("product_admin/actual_edit_product/$id"); ?>',
                 data: file,
                 
                 

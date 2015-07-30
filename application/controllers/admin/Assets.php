@@ -42,10 +42,10 @@ class Assets extends CI_Controller {
 		
 
 
-		$this->load->view('header');
-		$this->load->view('body');
-		$this->load->view('assets/main',$data);
-		$this->load->view('footer');
+		$this->load->view('admin/header');
+		$this->load->view('admin/body');
+		$this->load->view('admin/assets/main',$data);
+		$this->load->view('admin/footer');
 
 	}
 

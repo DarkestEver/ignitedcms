@@ -52,10 +52,10 @@ class Installer extends CI_Controller {
 		}
 		else
 		{
-			$this->load->view('header');
-			$this->load->view('body-installer');
-			$this->load->view('installer/installer');
-			$this->load->view('footer');
+			$this->load->view('admin/header');
+			$this->load->view('admin/body-installer');
+			$this->load->view('admin/installer/installer');
+			$this->load->view('admin/footer');
 		}	
 	}
 
@@ -100,10 +100,10 @@ class Installer extends CI_Controller {
 		{
 			 $data2['errors'] = 'Make sure database name contains only letters!';
 
-		  $this->load->view('header');
-		  $this->load->view('body-installer');
-		  $this->load->view('installer/installer', $data2);
-		  $this->load->view('footer');
+		  $this->load->view('admin/header');
+		  $this->load->view('admin/body-installer');
+		  $this->load->view('admin/installer/installer', $data2);
+		  $this->load->view('admin/footer');
 		}
 		else{		
 
@@ -123,10 +123,10 @@ class Installer extends CI_Controller {
 
 	  	  $data2['errors'] = 'Database credentials are wrong dude!';
 
-		  $this->load->view('header');
-		  $this->load->view('body-installer');
-		  $this->load->view('installer/installer', $data2);
-		  $this->load->view('footer');
+		  $this->load->view('admin/header');
+		  $this->load->view('admin/body-installer');
+		  $this->load->view('admin/installer/installer', $data2);
+		  $this->load->view('admin/footer');
 		}
 		else
 		{
@@ -144,10 +144,10 @@ class Installer extends CI_Controller {
 
 					$data2['success'] = 'All good dude!';
 
-					$this->load->view('header');
-					$this->load->view('body-installer');
-					$this->load->view('installer/installer-2',$data2);
-					$this->load->view('footer');
+					$this->load->view('admin/header');
+					$this->load->view('admin/body-installer');
+					$this->load->view('admin/installer/installer-2',$data2);
+					$this->load->view('admin/footer');
 					
 				}
 			} 
@@ -156,10 +156,10 @@ class Installer extends CI_Controller {
 			  //echo "Error creating database: " . mysqli_error($con);
 			  $data2['errors'] = 'Database already exists!';
 
-			  $this->load->view('header');
-			  $this->load->view('body-installer');
-			  $this->load->view('installer/installer', $data2);
-			  $this->load->view('footer');
+			  $this->load->view('admin/header');
+			  $this->load->view('admin/body-installer');
+			  $this->load->view('admin/installer/installer', $data2);
+			  $this->load->view('admin/footer');
 
 
 			}
@@ -247,10 +247,10 @@ class Installer extends CI_Controller {
 		$this->db->query($sql5);
 		$this->db->query($sql6);
 
-		$this->load->view('header');
-		$this->load->view('body-installer');
-		$this->load->view('installer/installer-3');
-		$this->load->view('footer');
+		$this->load->view('admin/header');
+		$this->load->view('admin/body-installer');
+		$this->load->view('admin/installer/installer-3');
+		$this->load->view('admin/footer');
 		
 	}
 
@@ -266,10 +266,10 @@ class Installer extends CI_Controller {
 
 	 public function set_time_local()
 	 {
-	 	$this->load->view('header');
-		$this->load->view('body-installer');
-		$this->load->view('installer/installer-4');
-		$this->load->view('footer');
+	 	$this->load->view('admin/header');
+		$this->load->view('admin/body-installer');
+		$this->load->view('admin/installer/installer-4');
+		$this->load->view('admin/footer');
 	 }
 
 
@@ -301,10 +301,10 @@ class Installer extends CI_Controller {
 	  */
 	public function login()
 	{
-		$this->load->view('header');
-		$this->load->view('body');
-		$this->load->view('login');
-		$this->load->view('footer');
+		$this->load->view('admin/header');
+		$this->load->view('admin/body');
+		$this->load->view('admin/login');
+		$this->load->view('admin/footer');
 	}
 
 }

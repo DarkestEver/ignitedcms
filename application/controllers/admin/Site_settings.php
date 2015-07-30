@@ -43,10 +43,10 @@ class Site_settings extends CI_Controller {
 
 
 
-		$this->load->view('header');
-		$this->load->view('body');
-		$this->load->view('sitesettings/main',$data);
-		$this->load->view('footer');
+		$this->load->view('admin/header');
+		$this->load->view('admin/body');
+		$this->load->view('admin/sitesettings/main',$data);
+		$this->load->view('admin/footer');
 	}
 
 	

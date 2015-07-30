@@ -1,5 +1,5 @@
      
-   <?php $this->load->view('footer-map');?>
+   <?php $this->load->view('admin/footer-map');?>
     </section>        
   </section> 
   
@@ -32,7 +32,7 @@
 
   <script type="text/javascript">
 
-        // removes MS Office generated guff
+    // removes MS Office generated guff
     function cleanHTML(input) {
       // 1. remove line breaks / Mso classes
       var stringStripper = /(\n|\r| class=(")?Mso[a-zA-Z]+(")?)/g; 
@@ -58,22 +58,31 @@
       }
       return output;
     }
+    
 
 
-    $("#product_form").submit(function(event) 
+    $("#blog_form").submit(function(event) 
     {
       
-        if ($('#product_form').parsley( 'validate' ) == true)
+        if ($('#blog_form').parsley( 'validate' ) == true)
         {
             
+           
+
             var content   = $("#editor").html();
             $('#dummy').val(cleanHTML(content));
 
 
+            var form = new FormData(document.getElementById('upload_file'));
+             //append files
+             var file = document.getElementById('userfile').files[0];
+              if (file) {   
+                  form.append('userfile', file);
+              }
 
             $.ajax({
                 type: "POST",
-                url: '<?php echo site_url("product_admin/actual_edit_product/$id"); ?>',
+                url: "<?php echo site_url('blog/actual_insert_blog_post'); ?>",
                 data: file,
                 
                 

@@ -38,10 +38,10 @@ class Email extends CI_Controller {
 		$query2 = $this->db->get();
 		$data['query2'] = $query2;
 
-		$this->load->view('header');
-		$this->load->view('body');
-		$this->load->view('email/email-view',$data);
-		$this->load->view('footer');
+		$this->load->view('admin/header');
+		$this->load->view('admin/body');
+		$this->load->view('admin/email/email-view',$data);
+		$this->load->view('admin/footer');
 	}
 
 	 

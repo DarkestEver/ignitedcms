@@ -1,5 +1,5 @@
      
-   <?php $this->load->view('footer-map');?>
+   <?php $this->load->view('admin/footer-map');?>
     </section>        
   </section> 
   

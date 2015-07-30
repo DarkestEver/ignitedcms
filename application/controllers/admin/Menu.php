@@ -56,10 +56,10 @@ class Menu extends CI_Controller {
 		$data['html'] = $html;
 		$data['title'] = 'Menu Builder';
 
-		$this->load->view('header');
-		$this->load->view('body');
-		$this->load->view('menu/menu-main', $data);
-		$this->load->view('menu/menu-footer');	
+		$this->load->view('admin/header');
+		$this->load->view('admin/body');
+		$this->load->view('admin/menu/menu-main', $data);
+		$this->load->view('admin/menu/menu-footer');	
 	}
 
 
@@ -125,72 +125,6 @@ class Menu extends CI_Controller {
 	 }
 
 
-
-
-	 /**
-	  *  @Description: DEPRECATED  pull all the pages from the db
-	  *       @Params: params
-	  *
-	  *  	 @returns: returns
-	  */
-	public function deprecated_pull_all_pages()
-	{	
-		
-		//first empty menu2
-		$this->db->select('*');
-		$this->db->from('menu2');
-		$query = $this->db->get();
-		
-		foreach ($query->result() as $row) 
-		{
-			$this->db->where('id', $row->id);
-			$this->db->delete('menu2');
-		}
-
-
-		$this->db->select('id,name');
-		$this->db->from('pages');
-
-		$query2 = $this->db->get();
-		
-		
-
-		$html_string = "";
-
-		foreach ($query2->result() as $row) 
-		{
-			$unique_id = random_string('alnum', 16);
-
-			$name = $row->name;
-			$url = $row->id;
-			$object = array('father' => 'null', 'innerhtml' => "$name|$url" );
-			$this->db->insert('menu2', $object);
-
-			$html_string = $html_string . 
-			"<li class='dd-item dd3-item' id='id$unique_id'>
-			<div class='dd-handle dd3-handle'></div>
-			<div class='dd3-content'>$name</div>
-			<div class='url' style='display:none;'>$url</div>
-			<div class='dd-edit' ><i id='remove' u_id='id$unique_id'class='fa fa-trash-o'></i></div>
-			</li>";
-			
-		}
-
-		//insert this into menu
-		$object2 = array('html' => $html_string );
-		$this->db->where('id', '1');
-		$this->db->update('menu', $object2);
-
-		redirect('admin/menu','refresh');
-		
-
-
-	}
-
-	
-
-
-
 	 /**
 	  *  @Description: save the menu order to database
 	  *       @Params: params
@@ -209,35 +143,6 @@ class Menu extends CI_Controller {
         $this->Stuff_menu->save_parent_child($html);
 		
 	}
-	 
-
-
-     /**
-      *  @Description: preview the superfish menu, need to add first 
-      *                class to be class="sf-menu" done via jquery
-      *       @Params: params
-      *
-      *  	 @returns: returns
-      */
-	public function preview()
-	{
-		
-
-		//grab the menu and sent to view
-		$this->load->model('Stuff_menu');
-		$menu = $this->Stuff_menu->make_menu();
-
-
-
-		$data['menu'] = $menu;
-		$this->load->view('sitepreview/header');
-		$this->load->view('sitepreview/body',$data);
-		$this->load->view('sitepreview/footer');	
-
-	}
-
-	 
-
 
 
 }

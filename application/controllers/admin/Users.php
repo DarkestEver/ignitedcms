@@ -56,10 +56,10 @@ class Users extends CI_Controller {
 			// echo $row->groupName;
 		}
 
-		$this->load->view('header');
-		$this->load->view('body');
-		$this->load->view('users/user-view',$data); 
-		$this->load->view('footer');
+		$this->load->view('admin/header');
+		$this->load->view('admin/body');
+		$this->load->view('admin/users/user-view',$data); 
+		$this->load->view('admin/footer');
 		
 	}
 
@@ -77,10 +77,10 @@ class Users extends CI_Controller {
 
 		$data['query'] = $query;
 
-		$this->load->view('header');
-		$this->load->view('body');
-		$this->load->view('users/user-view',$data); 
-		$this->load->view('footer');
+		$this->load->view('admin/header');
+		$this->load->view('admin/body');
+		$this->load->view('admin/users/user-view',$data); 
+		$this->load->view('admin/footer');
 
 
 	}
@@ -106,10 +106,10 @@ class Users extends CI_Controller {
 
 
 
-		$this->load->view('header');
-		$this->load->view('body');
-		$this->load->view('users/add-user',$data); 
-		$this->load->view('footer');
+		$this->load->view('admin/header');
+		$this->load->view('admin/body');
+		$this->load->view('admin/users/add-user',$data); 
+		$this->load->view('admin/footer');
 
 
 	}
@@ -144,10 +144,10 @@ class Users extends CI_Controller {
 		$data['userid'] = $userid;
 		
 
-		$this->load->view('header');
-		$this->load->view('body');
-		$this->load->view('users/update-user',$data); 
-		$this->load->view('footer');
+		$this->load->view('admin/header');
+		$this->load->view('admin/body');
+		$this->load->view('admin/users/update-user',$data); 
+		$this->load->view('admin/footer');
 
 
 	}
@@ -212,10 +212,10 @@ class Users extends CI_Controller {
 			
 
 
-			$this->load->view('header');
-			$this->load->view('body');
-			$this->load->view('users/user-view',$data);
-			$this->load->view('footer');
+			$this->load->view('admin/header');
+			$this->load->view('admin/body');
+			$this->load->view('admin/users/user-view',$data);
+			$this->load->view('admin/footer');
 		}
 
 		if($this->input->post('sbm') == "delete") 

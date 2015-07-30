@@ -1,5 +1,5 @@
           
-                    <?php $this->load->view('footer-map'); ?>
+                    <?php $this->load->view('custom/footer-map'); ?>
                 </section>        
             </section> 
         </section>
@@ -17,30 +17,28 @@
   <script src="<?php echo(base_url()."resources") ?>/js/app.data.js" type="text/javascript"></script>
   <!-- fuelux -->
   <script src="<?php echo(base_url()."resources") ?>/js/fuelux/fuelux.js" type="text/javascript"></script>
-  <!-- datepicker -->
-  <script src="<?php echo(base_url()."resources") ?>/js/datepicker/bootstrap-datepicker.js" type="text/javascript"></script>
-  <!-- combodate -->
-  <script src="<?php echo(base_url()."resources") ?>/js/libs/moment.min.js" type="text/javascript"></script>
-  <script src="<?php echo(base_url()."resources") ?>/js/combodate/combodate.js" type="text/javascript"></script>
-
+ 
   <!-- parsley -->
   <script src="<?php echo(base_url()."resources") ?>/js/parsley/parsley.min.js" type="text/javascript"></script>
   <script src="<?php echo(base_url()."resources") ?>/js/parsley/parsley.extend.js" type="text/javascript"></script>
 
-  
-  <script src="<?php echo(base_url()."resources") ?>/js/jscolor/jscolor.js" type="text/javascript"></script>
-  
+
+
+<!-- superfish menu -->
+  <script src="<?php echo(base_url()."resources") ?>/js/superfish/hoverIntent.js"></script>
+  <script src="<?php echo(base_url()."resources") ?>/js/superfish/superfish.js"></script>
 
   
-
 
  <script type="text/javascript">
    
     $(document).ready(function (event) {
 
-     
+
+         $('.menu').superfish({
+       
+        });
         
     });
 </script>
-</body>
-</html>
+

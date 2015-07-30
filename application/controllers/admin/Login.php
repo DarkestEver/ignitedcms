@@ -78,19 +78,19 @@ class Login extends CI_Controller {
               else
               {
                   $data['errors'] =   'Password is incorrect, check your caps lock is not on!';
-                  $this->load->view('header');
-                  $this->load->view('body');
-                  $this->load->view('login', $data);
-                  $this->load->view('footer');
+                  $this->load->view('admin/header');
+                  $this->load->view('admin/body');
+                  $this->load->view('admin/login', $data);
+                  $this->load->view('admin/footer');
               }
             }
             else
             {
                 $data['errors'] = 'User Does not exist';
-                $this->load->view('header');
-                $this->load->view('body');
-                $this->load->view('login', $data);
-                $this->load->view('footer');
+                $this->load->view('admin/header');
+                $this->load->view('admin/body');
+                $this->load->view('admin/login', $data);
+                $this->load->view('admin/footer');
             
             }
  
@@ -159,10 +159,10 @@ class Login extends CI_Controller {
                    Password must contain a number and Uppercase letter!<br/>
                    Password must be at least 6 characters long';
 
-                   $this->load->view('header');
-                   $this->load->view('body');
-                   $this->load->view('installer/installer-3', $data);
-                   $this->load->view('footer');
+                   $this->load->view('admin/header');
+                   $this->load->view('admin/body');
+                   $this->load->view('admin/installer/installer-3', $data);
+                   $this->load->view('admin/footer');
 
             }
             else{

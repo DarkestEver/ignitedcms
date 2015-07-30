@@ -37,10 +37,10 @@ class Blog extends CI_Controller {
 
 		$data['query'] = $query;
 
-		$this->load->view('header');
-		$this->load->view('body');
-		$this->load->view('blog/default',$data); 
-		$this->load->view('footer');
+		$this->load->view('admin/header');
+		$this->load->view('admin/body');
+		$this->load->view('admin/blog/default',$data); 
+		$this->load->view('admin/footer');
 
 	}
 
@@ -51,13 +51,13 @@ class Blog extends CI_Controller {
 	{
 
 		$data['title'] = 'New Blog Post';
-		$this->load->view('header');
+		$this->load->view('admin/header');
         
-        $this->load->view('body',$data);
+        $this->load->view('admin/body',$data);
 
 
-        $this->load->view('blog/blog-add-post'); 
-        $this->load->view('blog/footer-add-blog');
+        $this->load->view('admin/blog/blog-add-post'); 
+        $this->load->view('admin/blog/footer-add-blog');
 
 	}
 
@@ -77,11 +77,11 @@ class Blog extends CI_Controller {
 
 
 
-		$this->load->view('header');
-        $this->load->view('body');
+		$this->load->view('admin/header');
+        $this->load->view('admin/body');
 
-        $this->load->view('blog/blog-edit-post',$data); 
-        $this->load->view('blog/footer-edit-blog');
+        $this->load->view('admin/blog/blog-edit-post',$data); 
+        $this->load->view('admin/blog/footer-edit-blog');
 
 	}
 
@@ -110,10 +110,10 @@ class Blog extends CI_Controller {
 			
 
 
-			$this->load->view('header');
-			$this->load->view('body');
-			$this->load->view('blog/default',$data); 
-			$this->load->view('footer');
+			$this->load->view('admin/header');
+			$this->load->view('admin/body');
+			$this->load->view('admin/blog/default',$data); 
+			$this->load->view('admin/footer');
 		}
 
 		if($this->input->post('sbm') == "delete") 
@@ -158,10 +158,10 @@ class Blog extends CI_Controller {
 
 		$data['query'] = $query;
 
-		$this->load->view('header');
-		$this->load->view('body');
-		$this->load->view('blog/default',$data); 
-		$this->load->view('footer');
+		$this->load->view('admin/header');
+		$this->load->view('admin/body');
+		$this->load->view('admin/blog/default',$data); 
+		$this->load->view('admin/footer');
 
 
 	}

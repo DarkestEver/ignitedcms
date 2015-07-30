@@ -39,10 +39,10 @@ class Pages extends CI_Controller {
 		
 
 
-		$this->load->view('header');
-		$this->load->view('body');
-		$this->load->view('template/default',$data);
-		$this->load->view('footer');
+		$this->load->view('admin/header');
+		$this->load->view('admin/body');
+		$this->load->view('admin/template/default',$data);
+		$this->load->view('admin/footer');
 	}
 
 	 /**
@@ -114,10 +114,10 @@ class Pages extends CI_Controller {
 		
 
 
-		$this->load->view('header');
-		$this->load->view('body');
-		$this->load->view('template/default',$data);
-		$this->load->view('footer');
+		$this->load->view('admin/header');
+		$this->load->view('admin/body');
+		$this->load->view('admin/template/default',$data);
+		$this->load->view('admin/footer');
 
 
 	}
@@ -135,10 +135,10 @@ class Pages extends CI_Controller {
 	public function page_view()
 	{
 
-		$this->load->view('header');
-		$this->load->view('body');
-		$this->load->view('pages/page');
-		$this->load->view('footer');
+		$this->load->view('admin/header');
+		$this->load->view('admin/body');
+		$this->load->view('admin/pages/page');
+		$this->load->view('admin/footer');
 
 	}
 
@@ -228,10 +228,10 @@ class Pages extends CI_Controller {
 
 		$data['id'] = $id;
 
-		$this->load->view('header');
-		$this->load->view('body');
-		$this->load->view('builder/builder',$data);
-		$this->load->view('builder/footer',$data);
+		$this->load->view('admin/header');
+		$this->load->view('admin/body');
+		$this->load->view('admin/builder/builder',$data);
+		$this->load->view('admin/builder/footer',$data);
 
 	}
 
@@ -260,10 +260,10 @@ class Pages extends CI_Controller {
 			
 
 
-			$this->load->view('header');
-			$this->load->view('body');
-			$this->load->view('template/default',$data);
-			$this->load->view('footer');
+			$this->load->view('admin/header');
+			$this->load->view('admin/body');
+			$this->load->view('admin/template/default',$data);
+			$this->load->view('admin/footer');
 		}
 
 		if($this->input->post('sbm') == "delete") 

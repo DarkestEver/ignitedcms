@@ -40,10 +40,10 @@ class Permissions extends CI_Controller {
 		
 
 
-		$this->load->view('header');
-		$this->load->view('body');
-		$this->load->view('permissions/group-perm',$data);
-		$this->load->view('footer');
+		$this->load->view('admin/header');
+		$this->load->view('admin/body');
+		$this->load->view('admin/permissions/group-perm',$data);
+		$this->load->view('admin/footer');
 
 	}
 
@@ -70,10 +70,10 @@ class Permissions extends CI_Controller {
 		//eg convert site_settings to Site Settings with  humanize() function
 		
 
-		$this->load->view('header');
-		$this->load->view('body');
-		$this->load->view('permissions/group-perm-details',$data);
-		$this->load->view('footer');
+		$this->load->view('admin/header');
+		$this->load->view('admin/body');
+		$this->load->view('admin/permissions/group-perm-details',$data);
+		$this->load->view('admin/footer');
 
 	}
 
@@ -161,10 +161,10 @@ class Permissions extends CI_Controller {
 		
 		
 
-		$this->load->view('header');
-		$this->load->view('body');
-		$this->load->view('permissions/group-perm-update',$data);
-		$this->load->view('footer');
+		$this->load->view('admin/header');
+		$this->load->view('admin/body');
+		$this->load->view('admin/permissions/group-perm-update',$data);
+		$this->load->view('admin/footer');
 
 
 
@@ -255,10 +255,10 @@ class Permissions extends CI_Controller {
 			
 
 
-			$this->load->view('header');
-			$this->load->view('body');
-			$this->load->view('permissions/group-perm',$data);
-			$this->load->view('footer');
+			$this->load->view('admin/header');
+			$this->load->view('admin/body');
+			$this->load->view('admin/permissions/group-perm',$data);
+			$this->load->view('admin/footer');
 		}
 
 		if($this->input->post('sbm') == "delete") 

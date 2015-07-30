@@ -27,10 +27,10 @@ class Database extends CI_Controller {
 	{
 		$data['some_var'] = 'test';
 
-		$this->load->view('header');
-		$this->load->view('body');
-		$this->load->view('database/utils-view',$data);
-		$this->load->view('footer');
+		$this->load->view('admin/header');
+		$this->load->view('admin/body');
+		$this->load->view('admin/database/utils-view',$data);
+		$this->load->view('admin/footer');
 	   
 	}
 
