@@ -13,12 +13,12 @@ class Pages extends CI_Controller {
 
 					if($pass != true)
 					{
-						redirect('dashboard','refresh');
+						redirect('admin/dashboard','refresh');
 					}
 			  	}
 			  	else
 			  	{
-			  		redirect('installer','refresh');
+			  		redirect('admin/installer','refresh');
 			  	}
 		  }
 	}
@@ -93,7 +93,7 @@ class Pages extends CI_Controller {
 
 		}
 
-		redirect("pages/detail_view/$id","refresh");
+		redirect("admin/pages/detail_view/$id","refresh");
 
 	}
 
@@ -158,7 +158,7 @@ class Pages extends CI_Controller {
 		$object = array('name' => $name );
 		$this->db->insert('pages', $object);
 
-		redirect('pages','refresh');
+		redirect('admin/pages','refresh');
 
 	}
 
@@ -285,7 +285,7 @@ class Pages extends CI_Controller {
 			}
 			
 			//return to page view
-			redirect("pages","refresh");
+			redirect("admin/pages","refresh");
 		
 		}
 	}

@@ -26,9 +26,9 @@
 	      <div class="col-sm-12">
 	        <!-- .breadcrumb -->
 	        <ul class="breadcrumb">
-	          <li><a href="<?php echo site_url('dashboard'); ?>"><i class="fa fa-home"></i> <?php echo ('Dashboard'); ?></a></li>
-	          <li ><a href="<?php echo site_url('permissions'); ?>"><i class="fa fa-list-ul"></i> <?php echo('Permissions');?></a></li>
-	          <li class='active'><a href="#"><i class="fa fa-lock"></i> <?php echo(my_role($this->uri->segment(3, 0)));?></a></li>
+	          <li><a href="<?php echo site_url('admin/dashboard'); ?>"><i class="fa fa-home"></i> <?php echo ('Dashboard'); ?></a></li>
+	          <li ><a href="<?php echo site_url('admin/permissions'); ?>"><i class="fa fa-list-ul"></i> <?php echo('Permissions');?></a></li>
+	          <li class='active'><a href="#"><i class="fa fa-lock"></i> <?php echo(my_role($this->uri->segment(4, 0)));?></a></li>
 	        </ul>
 	              
 	        </div>
@@ -41,7 +41,7 @@
 	    	    <section class="panel">
 	    	        
 	    	        <div class="panel-body">
-	    	        	<?php $atts= array( 'data-validate'=>'parsley'); echo form_open_multipart("permissions/update_permission_groups/$group_id",$atts); ?>
+	    	        	<?php $atts= array( 'data-validate'=>'parsley'); echo form_open_multipart("admin/permissions/update_permission_groups/$group_id",$atts); ?>
 	    	        	
 	    	        	
 

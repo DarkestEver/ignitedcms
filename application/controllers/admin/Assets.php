@@ -14,12 +14,12 @@ class Assets extends CI_Controller {
 
 				if($pass != true)
 				{
-					redirect('dashboard','refresh');
+					redirect('admin/dashboard','refresh');
 				}
 			}
 			else
 			{
-				redirect('installer','refresh');
+				redirect('admin/installer','refresh');
 			}
 		}
 	}
@@ -77,7 +77,7 @@ class Assets extends CI_Controller {
 			$this->session->set_flashdata('type', '0');
 			$this->session->set_flashdata('msg', "<strong>Failed</strong> $errors");
 			
-			redirect('assets','refresh');
+			redirect('admin/assets','refresh');
 
         }
         //successful
@@ -113,7 +113,7 @@ class Assets extends CI_Controller {
 			$this->session->set_flashdata('type', '1');
 			$this->session->set_flashdata('msg', '<strong>Success</strong> Image uploaded');
 			
-			redirect('assets','refresh');
+			redirect('admin/assets','refresh');
 		}
 
 	}
@@ -148,7 +148,7 @@ class Assets extends CI_Controller {
 			$this->session->set_flashdata('type', '0');
 			$this->session->set_flashdata('msg', "<strong>Failed</strong> $errors");
 			
-			redirect("pages/detail_view/$id",'refresh');
+			redirect("admin/pages/detail_view/$id",'refresh');
 
         }
         //successful
@@ -184,7 +184,7 @@ class Assets extends CI_Controller {
 			$this->session->set_flashdata('type', '1');
 			$this->session->set_flashdata('msg', '<strong>Success</strong> Image uploaded, click on the Add Image button again to use!');
 			
-			redirect("pages/detail_view/$id",'refresh');
+			redirect("admin/pages/detail_view/$id",'refresh');
 		}
 
 

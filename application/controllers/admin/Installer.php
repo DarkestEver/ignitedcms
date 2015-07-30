@@ -48,7 +48,7 @@ class Installer extends CI_Controller {
 	{
 		if($this->check_if_written()==true)
 		{
-			redirect("installer/login", "refresh");
+			redirect("admin/installer/login", "refresh");
 		}
 		else
 		{
@@ -284,7 +284,7 @@ class Installer extends CI_Controller {
 
 	  	//To do: write over config file
 
-	  	redirect('installer/login', 'refresh');
+	  	redirect('admin/installer/login', 'refresh');
 
 
 

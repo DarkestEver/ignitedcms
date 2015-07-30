@@ -15,9 +15,9 @@
         <div class="logo-text">Ignited CMS</div>
         <div class="menu-options pull-right" style="margin-top:20px;">
           <div class="btn btn-sm  btn-black" data-toggle="popover" data-html="true" data-placement="bottom" 
-          data-content='<?php echo anchor('profile','My Profile','attributs'); ?>
+          data-content='<?php echo anchor('admin/profile','My Profile','attributs'); ?>
           <br/>
-          <?php echo anchor('login/logout', 'Logout', 'attributs'); ?>
+          <?php echo anchor('admin/login/logout', 'Logout', 'attributs'); ?>
           
 
           ' title="" data-original-title='<button type="button" class="close pull-right" data-dismiss="popover">&times;</button>Profile'> <i class="fa fa-user"></i>  <strong> <?php echo my_username(); ?></strong></div>

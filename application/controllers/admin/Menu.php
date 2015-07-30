@@ -13,12 +13,12 @@ class Menu extends CI_Controller {
 
 					if($pass != true)
 					{
-						redirect('dashboard','refresh');
+						redirect('admin/dashboard','refresh');
 					}
 			  	}
 			  	else
 			  	{
-			  		redirect('installer','refresh');
+			  		redirect('admin/installer','refresh');
 			  	}
 		  }
 	}
@@ -121,7 +121,7 @@ class Menu extends CI_Controller {
 		$this->db->where('id', '1');
 		$this->db->update('menu', $object2);
 
-		redirect('menu','refresh');
+		redirect('admin/menu','refresh');
 	 }
 
 
@@ -181,7 +181,7 @@ class Menu extends CI_Controller {
 		$this->db->where('id', '1');
 		$this->db->update('menu', $object2);
 
-		redirect('menu','refresh');
+		redirect('admin/menu','refresh');
 		
 
 

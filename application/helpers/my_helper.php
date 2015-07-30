@@ -109,7 +109,7 @@ if ( ! function_exists('my_render_dashboard'))
           //get the icon
           $icon = $CI->Stuff_permissions->get_icon($key);
 
-          echo("<a href=". site_url($key).">
+          echo("<a href=". site_url("admin/$key").">
                   <div class='col-sm-4 my-pad-top'>
                     <div class='my-blk'>
                        <i class='$icon'></i>

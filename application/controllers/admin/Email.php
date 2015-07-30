@@ -12,12 +12,12 @@ class Email extends CI_Controller {
 
 					if($pass != true)
 					{
-						redirect('dashboard','refresh');
+						redirect('admin/dashboard','refresh');
 					}
 			  	}
 			  	else
 			  	{
-			  		redirect('installer','refresh');
+			  		redirect('admin/installer','refresh');
 			  	}
 		  }
 	}
@@ -79,7 +79,7 @@ class Email extends CI_Controller {
 
 		$this->session->set_flashdata('type', '1');
 		$this->session->set_flashdata('msg', '<strong>Success</strong> Email Settings Saved');
-		redirect("email", "refresh");
+		redirect("admin/email", "refresh");
 	}
 
 	 /**
@@ -99,7 +99,7 @@ class Email extends CI_Controller {
 		$this->session->set_flashdata('type', '1');
 		$this->session->set_flashdata('msg', '<strong>Please check your email.</strong>');
 
-		redirect("email", "refresh");
+		redirect("admin/email", "refresh");
 
 
 	}
@@ -149,7 +149,7 @@ class Email extends CI_Controller {
       {
         show_error($this->email->print_debugger());
       }    
-      redirect("email", "refresh");
+      redirect("admin/email", "refresh");
 
 	}
 

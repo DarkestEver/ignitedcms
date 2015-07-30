@@ -14,12 +14,12 @@ class Permissions extends CI_Controller {
 
 				if($pass != true)
 				{
-					redirect('dashboard','refresh');
+					redirect('admin/dashboard','refresh');
 				}
 		  	}
 		  	else
 		  	{
-		  		redirect('installer','refresh');
+		  		redirect('admin/installer','refresh');
 		  	}
 		}
 	}
@@ -113,7 +113,7 @@ class Permissions extends CI_Controller {
     		}	
     	}
 
-    	redirect("permissions", "refresh");
+    	redirect("admin/permissions", "refresh");
 	}
 
 
@@ -202,7 +202,7 @@ class Permissions extends CI_Controller {
 			}
 		}
 
-		redirect("permissions/update_permission_view/$group_id", "refresh");
+		redirect("admin/permissions/update_permission_view/$group_id", "refresh");
 
 
 	}
@@ -299,7 +299,7 @@ class Permissions extends CI_Controller {
 			
 
 			//return to page view
-			redirect("permissions","refresh");
+			redirect("admin/permissions","refresh");
 		
 		}
 

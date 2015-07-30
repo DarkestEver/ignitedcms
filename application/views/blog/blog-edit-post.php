@@ -5,7 +5,7 @@
       <div class="col-sm-12">
         <!-- .breadcrumb -->
         <ul class="breadcrumb">
-          <li><a href="<?php echo site_url('blog'); ?>"><i class="fa fa-home"></i> <?php echo $this->uri->segment(1, 0); ?></a></li>
+          <li><a href="<?php echo site_url('admin/blog'); ?>"><i class="fa fa-home"></i> <?php echo $this->uri->segment(2, 0); ?></a></li>
           <li class='active'><a href="#"><i class="fa fa-list-ul"></i> <?php echo('Edit blog post');?></a></li>
           
         </ul>
@@ -26,7 +26,7 @@
                       <div style="margin-top:30px;"></div>
 
                         <!-- important make sure class is form-horizontal -->
-                        <form  method="post" action="<?php echo site_url("blog/actual_edit_blog_post/$id"); ?>"class="form-horizontal" id="blog_form" data-validate="parsley" accept-charset="utf-8" enctype="multipart/form-data">
+                        <form  method="post" action="<?php echo site_url("admin/blog/actual_edit_blog_post/$id"); ?>"class="form-horizontal" id="blog_form" data-validate="parsley" accept-charset="utf-8" enctype="multipart/form-data">
                           <div class="panel-body"> 
                             <?php foreach ($query->result() as $row): ?>
                             <div class="form-group"> 
@@ -98,7 +98,7 @@
                               <div class="col-sm-4 col-sm-offset-2">  
                                 <button type="submit" id="create-topic"class="btn btn-purplet"><strong>Edit Post</strong></button> 
                                  <?php echo form_close(); ?>
-                                  <a href="<?php echo site_url("blog/delete_blog_post/$id"); ?>">
+                                  <a href="<?php echo site_url("admin/blog/delete_blog_post/$id"); ?>">
                                     <div type="btn btn-small" id="create-topic"class="btn btn-danger"><strong>Delete</strong></div> 
                                   </a>
                               </div> 

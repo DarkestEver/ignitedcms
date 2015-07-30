@@ -26,12 +26,12 @@ class Users extends CI_Controller {
 
 				if($pass != true)
 				{
-					redirect('dashboard','refresh');
+					redirect('admin/dashboard','refresh');
 				}
 		  	}
 		  	else
 		  	{
-		  		redirect('installer','refresh');
+		  		redirect('admin/installer','refresh');
 		  	}
 		}
 	}
@@ -181,7 +181,7 @@ class Users extends CI_Controller {
 
 		
 
-		redirect("users","refresh");
+		redirect("admin/users","refresh");
 
 	}
 
@@ -239,7 +239,7 @@ class Users extends CI_Controller {
 			}
 			
 			//return to page view
-			redirect("users","refresh");
+			redirect("admin/users","refresh");
 		
 		}
 	}
@@ -279,7 +279,7 @@ class Users extends CI_Controller {
 
 			$this->session->set_flashdata('type', '1');
 			$this->session->set_flashdata('msg', '<strong>Success</strong> User created!');
-			redirect("users","refresh");
+			redirect("admin/users","refresh");
 
 		}
 		else
@@ -288,7 +288,7 @@ class Users extends CI_Controller {
 			$error_message = $this->Stuff_user->add_user($name,$email,$password,$roles);
 			$this->session->set_flashdata('type', '0');
 			$this->session->set_flashdata('msg', "<strong>Failed</strong> $error_message");
-			redirect("users/add_user_view","refresh");
+			redirect("admin/users/add_user_view","refresh");
 
 
 		}

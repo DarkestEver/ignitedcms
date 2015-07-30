@@ -37,7 +37,7 @@
  	       <div class="col-sm-12">
  	         <!-- .breadcrumb -->
  	         <ul class="breadcrumb">
- 	           <li><a href="<?php echo site_url('dashboard'); ?>"><i class="fa fa-home"></i> <?php echo ('Dashboard'); ?></a></li>
+ 	           <li><a href="<?php echo site_url('admin/dashboard'); ?>"><i class="fa fa-home"></i> <?php echo ('Dashboard'); ?></a></li>
  	           <li class='active'><a href="#"><i class="fa fa-list-ul"></i> <?php echo('Pages');?></a></li>
  	           
  	         </ul>
@@ -65,7 +65,7 @@
                           
                         </div>
                         <div class="col-sm-2">
-                            <a href="<?php echo site_url("pages/page_view"); ?>">
+                            <a href="<?php echo site_url("admin/pages/page_view"); ?>">
                                 <button  type="submit" class="btn btn-purplet btn-s-xs pull-right" id="">
                                 <i class="fa fa-plus"></i> <strong>Add Page</strong></button>
                             </a>
@@ -75,7 +75,7 @@
                     <div class="line"></div>
 
 
-              <?php $atts= array( 'data-validate'=>'parsley'); echo form_open_multipart('pages/search_pages_or_delete',$atts); ?>
+              <?php $atts= array( 'data-validate'=>'parsley'); echo form_open_multipart('admin/pages/search_pages_or_delete',$atts); ?>
 	           	<!-- search and sort -->
 	           	<div class="row" >
 	           		<div class="col-sm-2">
@@ -108,7 +108,7 @@
 		           		<div class="input-group-btn">
                             <button type="button" class="btn btn-white dropdown-toggle" data-toggle="dropdown"><i class="fa fa-sort-amount-desc"> <strong>Sort by Title</strong></i> <span class="caret"></span></button>
                             <ul class="dropdown-menu pull-right">
-                              <li><a href=" <?php echo site_url('pages/sort_by/name'); ?> ">Title</a></li>
+                              <li><a href=" <?php echo site_url('admin/pages/sort_by/name'); ?> ">Title</a></li>
                               <li><a href="#">URI</a></li>
                               <li><a href="#">Post Date</a></li>
                               <li class="divider"></li>
@@ -140,7 +140,7 @@
                     		<tr>
 		                        <td><input type="checkbox" name="chosen[]" value="<?php echo $id; ?>"></td>
 		                        <td>
-		                        	<a href="<?php echo site_url("pages/detail_view/$id"); ?>"><?php echo $row->name; ?></a>
+		                        	<a href="<?php echo site_url("admin/pages/detail_view/$id"); ?>"><?php echo $row->name; ?></a>
 		                        </td>
 		                        <td>...</td>
 		                        <td>Jul 25, 2013</td>

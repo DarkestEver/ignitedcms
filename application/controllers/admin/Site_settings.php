@@ -13,12 +13,12 @@ class Site_settings extends CI_Controller {
 
 				if($pass != true)
 				{
-					redirect('dashboard','refresh');
+					redirect('admin/dashboard','refresh');
 				}
 			}
 			else
 			{
-				redirect('installer','refresh');
+				redirect('admin/installer','refresh');
 			}
 		}
 	}
@@ -109,7 +109,7 @@ class Site_settings extends CI_Controller {
             $this->db->where('id', '1');
             $this->db->update('site', $object);
 			
-			redirect('site_settings','refresh');
+			redirect('admin/site_settings','refresh');
 
         }
         //successful
@@ -150,7 +150,7 @@ class Site_settings extends CI_Controller {
 			$this->session->set_flashdata('type', '1');
 			$this->session->set_flashdata('msg', '<strong>Success</strong> Saved!');
 			
-			redirect('site_settings','refresh');
+			redirect('admin/site_settings','refresh');
 			
 			
         }

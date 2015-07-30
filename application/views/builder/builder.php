@@ -27,9 +27,9 @@
             <div class="col-sm-12">
               <!-- .breadcrumb -->
               <ul class="breadcrumb">
-                <li><a href="<?php echo site_url('dashboard'); ?>"><i class="fa fa-home"></i> <?php echo ('Dashboard'); ?></a></li>
-                <li><a href="<?php echo site_url('pages'); ?>"><i class="fa fa-list-ul"></i> <?php echo $this->uri->segment(1, 0); ?></a></li>
-                <li class='active'><a href="#"><i class="fa fa-book"></i> <?php echo(my_page_name($this->uri->segment(3, 0)));?></a></li>
+                <li><a href="<?php echo site_url('admin/dashboard'); ?>"><i class="fa fa-home"></i> <?php echo ('Dashboard'); ?></a></li>
+                <li><a href="<?php echo site_url('admin/pages'); ?>"><i class="fa fa-list-ul"></i> <?php echo $this->uri->segment(1, 0); ?></a></li>
+                <li class='active'><a href="#"><i class="fa fa-book"></i> <?php echo(my_page_name($this->uri->segment(4, 0)));?></a></li>
                 
               </ul>
                     
@@ -42,7 +42,7 @@
     <div class="col-sm-12">
         
         <section class="panel">
-            <?php $atts= array( 'data-validate'=>'parsley'); echo form_open_multipart("pages/save_page_options/$id",$atts); ?>
+            <?php $atts= array( 'data-validate'=>'parsley'); echo form_open_multipart("admin/pages/save_page_options/$id",$atts); ?>
             
             <div class="panel-body">
 
@@ -133,7 +133,7 @@
 
 
                     <!-- asset upload form -->
-                    <?php $atts= array( 'data-validate'=>'parsley'); echo form_open_multipart("assets/do_upload_builder/$id",$atts); ?>
+                    <?php $atts= array( 'data-validate'=>'parsley'); echo form_open_multipart("admin/assets/do_upload_builder/$id",$atts); ?>
                     <div class="form-group">
                         <label >Upload Image:</label>
                         

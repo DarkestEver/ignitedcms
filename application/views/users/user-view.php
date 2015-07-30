@@ -37,7 +37,7 @@
  	       <div class="col-sm-12">
  	         <!-- .breadcrumb -->
  	         <ul class="breadcrumb">
- 	           <li><a href="<?php echo site_url('dashboard'); ?>"><i class="fa fa-home"></i> <?php echo ('Dashboard'); ?></a></li>
+ 	           <li><a href="<?php echo site_url('admin/dashboard'); ?>"><i class="fa fa-home"></i> <?php echo ('Dashboard'); ?></a></li>
  	           <li class='active'><a href="#"><i class="fa fa-list-ul"></i> <?php echo('Users');?></a></li>
  	           
  	         </ul>
@@ -65,7 +65,7 @@
                           
                         </div>
                         <div class="col-sm-2">
-                            <a href="<?php echo site_url("users/add_user_view"); ?>">
+                            <a href="<?php echo site_url("admin/users/add_user_view"); ?>">
                                 <button  type="submit" class="btn btn-purplet btn-s-xs pull-right" id="">
                                 <i class="fa fa-plus"></i> <strong>Add New User</strong></button>
                             </a>
@@ -77,7 +77,7 @@
 
 
 	           	<!-- search and sort -->
-              <?php $atts= array( 'data-validate'=>'parsley'); echo form_open_multipart('users/search_users_or_delete',$atts); ?>
+              <?php $atts= array( 'data-validate'=>'parsley'); echo form_open_multipart('admin/users/search_users_or_delete',$atts); ?>
 	           	<div class="row" >
 	           		<div class="col-sm-2">
 	           		<div class="btn  btn-white" data-toggle="popover" data-html="true" data-placement="top" data-content='
@@ -108,9 +108,9 @@
 		           		<div class="input-group-btn">
                             <button type="button" class="btn btn-white dropdown-toggle" data-toggle="dropdown"><i class="fa fa-sort-amount-desc"> <strong>Sort by User</strong></i> <span class="caret"></span></button>
                             <ul class="dropdown-menu pull-right">
-                              <li><a href="<?php echo site_url('users/sort_by/name'); ?> ">Username</a></li>
-                              <li><a href="<?php echo site_url('users/sort_by/email'); ?>">Email</a></li>
-                              <li><a href="<?php echo site_url('users/sort_by/groupID'); ?>">Roles</a></li>
+                              <li><a href="<?php echo site_url('admin/users/sort_by/name'); ?> ">Username</a></li>
+                              <li><a href="<?php echo site_url('admin/users/sort_by/email'); ?>">Email</a></li>
+                              <li><a href="<?php echo site_url('admin/users/sort_by/groupID'); ?>">Roles</a></li>
                               <li class="divider"></li>
                               <li><a href="#">Ascending</a></li>
                               <li><a href="#">Descending</a></li>
@@ -140,7 +140,7 @@
                     		<tr>
 		                        <td><input type="checkbox" name="chosen[]" value="<?php echo $id; ?>"></td>
 		                        <td>
-		                        	<a href="<?php echo site_url("users/user_update_view/$id"); ?>"><?php echo $row->name; ?></a>
+		                        	<a href="<?php echo site_url("admin/users/user_update_view/$id"); ?>"><?php echo $row->name; ?></a>
 		                        </td>
 		                        <td> <?php echo $row->email; ?></td>
 		                        <td><?php echo $row->groupName; ?></td>

@@ -11,7 +11,7 @@ class Dashboard extends CI_Controller {
 			  	}
 			  	else
 			  	{
-			  		redirect('installer','refresh');
+			  		redirect('admin/installer','refresh');
 			  	}
 		  }
 	}
@@ -19,9 +19,12 @@ class Dashboard extends CI_Controller {
 
 	public function index()
 	{
-		//test for permissions
-		
+		//ip address and user agent test
+		// $ip = $this->input->ip_address();
+		// echo $ip;
+		// echo $this->input->user_agent();
 
+		
 
 		$this->load->view('header');
 		$this->load->view('body');

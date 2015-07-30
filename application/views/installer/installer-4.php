@@ -17,7 +17,7 @@
                     </div>
                     <?php } ?>
                   
-                    <?php $atts= array( 'data-validate'=>'parsley'); echo form_open_multipart('installer/save_time_local',$atts); ?>
+                    <?php $atts= array( 'data-validate'=>'parsley'); echo form_open_multipart('admin/installer/save_time_local',$atts); ?>
                     
                      <img src="<?php echo base_url("img/ig.png"); ?>" class="img-responsive my-center" style="position:relative;">
                     

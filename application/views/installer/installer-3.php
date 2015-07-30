@@ -16,7 +16,7 @@
                     </div>
                     <?php } ?>
                   
-                    <?php $atts= array( 'data-validate'=>'parsley'); echo form_open_multipart('login/validate_details',$atts); ?>
+                    <?php $atts= array( 'data-validate'=>'parsley'); echo form_open_multipart('admin/login/validate_details',$atts); ?>
                     
                     <p class="h2">Information Needed</p>
                     

@@ -23,7 +23,7 @@
 			        		</div>
 		        		</a> -->
 
-		        		<a href="<?php echo site_url('help'); ?>">
+		        		<a href="<?php echo site_url('admin/help'); ?>">
 			        		<div class="col-sm-4 my-pad-top">
 			        			<div class="my-blk">
 			        				 <i class="fa fa-question big "></i>

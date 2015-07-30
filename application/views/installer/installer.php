@@ -18,7 +18,7 @@
 
                     <img src="<?php echo base_url("img/ig.png"); ?>" class="img-responsive my-center" style="position:relative;">
                     <p class="h2">Installation</p>
-                    <?php $atts = array( 'data-validate'=>'parsley'); echo form_open_multipart('installer/write_file',$atts); ?>
+                    <?php $atts = array( 'data-validate'=>'parsley'); echo form_open_multipart('admin/installer/write_file',$atts); ?>
                     <div class="form-group">All right champ, please type your database details here!</div>
                     <div class="form-group">
                         <label>Server Name</label>

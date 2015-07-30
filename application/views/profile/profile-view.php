@@ -26,7 +26,7 @@
 		      <div class="col-sm-12">
 		        <!-- .breadcrumb -->
 		        <ul class="breadcrumb">
-		          <li><a href="<?php echo site_url('dashboard'); ?>"><i class="fa fa-home"></i> <?php echo "Dashboard"; ?></a></li>
+		          <li><a href="<?php echo site_url('admin/dashboard'); ?>"><i class="fa fa-home"></i> <?php echo "Dashboard"; ?></a></li>
 		          <li class='active'><a href="#"><i class="fa fa-list-ul"></i> <?php echo('My Profile');?></a></li>
 		          
 		        </ul>
@@ -37,7 +37,7 @@
 
 		    <div class="row" style="margin-left:30px; margin-right:30px;">
 		    	<div class="col-sm-12">
-		    		<?php $atts= array( 'data-validate'=>'parsley'); echo form_open_multipart('profile/save_profile',$atts); ?>
+		    		<?php $atts= array( 'data-validate'=>'parsley'); echo form_open_multipart('admin/profile/save_profile',$atts); ?>
 		    		
 				    <header class="panel-heading"> <div class="inline font-bold">Profile</div>
 				    	<div class="pull-right btn btn-sm  btn-info btn-rounded" data-toggle="popover" data-html="true" data-placement="bottom" data-content="Fill in your profile details here." title="" data-original-title='<button type="button" class="close pull-right" data-dismiss="popover">&times;</button>Info'> <i class="fa fa-question"></i> <strong></strong> 

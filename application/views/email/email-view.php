@@ -21,7 +21,7 @@
 	      <div class="col-sm-12">
 	        <!-- .breadcrumb -->
 	        <ul class="breadcrumb">
-	          <li><a href="<?php echo site_url('dashboard'); ?>"><i class="fa fa-home"></i> <?php echo "Dashboard"; ?></a></li>
+	          <li><a href="<?php echo site_url('admin/dashboard'); ?>"><i class="fa fa-home"></i> <?php echo "Dashboard"; ?></a></li>
 	          <li class='active'><a href="#"><i class="fa fa-list-ul"></i> <?php echo('Email Settings');?></a></li>
 	          
 	        </ul>
@@ -39,7 +39,7 @@
                 </div>
             </header>
 		    <section class="panel">
-		        <?php $atts= array( 'data-validate'=>'parsley'); echo form_open_multipart('email/save_email_settings',$atts); ?>
+		        <?php $atts= array( 'data-validate'=>'parsley'); echo form_open_multipart('admin/email/save_email_settings',$atts); ?>
 		        
 		        <?php foreach($query2->result() as $row): ?>
 		        <div class="panel-body">
@@ -84,12 +84,12 @@
                 </div>
             </header>
 			    <section class="panel">
-			        <?php $atts= array( 'data-validate'=>'parsley'); echo form_open_multipart('email/test_email',$atts); ?>
+			        <?php $atts= array( 'data-validate'=>'parsley'); echo form_open_multipart('admin/email/test_email',$atts); ?>
 			        
 			        <div class="panel-body">
 			        	<div class="form-group">
 			        	    <label>Email </label>
-			        	    <input name="email" type="text" data-required="true" data-maxlength="50" class="form-control" placeholder="Type here" data-toggle="tooltip" data-placement="top" title="Email" value="">
+			        	    <input name="email" type="text" data-type="email" data-required="true" data-maxlength="50" class="form-control" placeholder="Type here" data-toggle="tooltip" data-placement="top" title="Email" value="">
 			        	</div>
 			        	<button type="submit" class="btn btn-purplet btn-s-xs " id=""><strong>Send test Email</strong></button>
 			        	
@@ -105,7 +105,7 @@
 		  <div class="col-sm-12">
 		      <header class="panel-heading font-bold">Email Test with phpmail</header>
 		      <section class="panel">
-		          <?php $atts= array( 'data-validate'=>'parsley'); echo form_open_multipart('email/php_mail_test',$atts); ?>
+		          <?php $atts= array( 'data-validate'=>'parsley'); echo form_open_multipart('admin/email/php_mail_test',$atts); ?>
 		          
 		          <div class="panel-body">
 		          	 <div class="form-group">

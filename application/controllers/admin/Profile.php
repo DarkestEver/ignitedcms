@@ -16,12 +16,12 @@ class Profile extends CI_Controller {
 
 					if($pass != true)
 					{
-						redirect('dashboard','refresh');
+						redirect('admin/dashboard','refresh');
 					}
 			  	}
 			  	else
 			  	{
-			  		redirect('installer','refresh');
+			  		redirect('admin/installer','refresh');
 			  	}
 		  }
 	}
@@ -77,7 +77,7 @@ class Profile extends CI_Controller {
 			$this->db->where('id', $id);
 			$this->db->update('user', $object);
 
-			redirect("profile","refresh");
+			redirect("admin/profile","refresh");
 
 
 		}
@@ -96,7 +96,7 @@ class Profile extends CI_Controller {
 				$this->session->set_flashdata('type', '1');
 				$this->session->set_flashdata('msg', '<strong>Success</strong> Password updated!');
 
-				redirect("profile","refresh");
+				redirect("admin/profile","refresh");
 
 			}
 			else
@@ -112,7 +112,7 @@ class Profile extends CI_Controller {
 	               $this->session->set_flashdata('msg', "<strong>Failed</strong> $errors");
 
 
-	               redirect("profile","refresh");
+	               redirect("admin/profile","refresh");
 			}
 		}
 

@@ -25,7 +25,7 @@
         <div class="col-sm-12">
           <!-- .breadcrumb -->
           <ul class="breadcrumb">
-            <li><a href="<?php echo site_url('dashboard'); ?>"><i class="fa fa-home"></i> <?php echo('Dashboard'); ?></a></li>
+            <li><a href="<?php echo site_url('admin/dashboard'); ?>"><i class="fa fa-home"></i> <?php echo('Dashboard'); ?></a></li>
             <li class='active'><a href="#"><i class="fa fa-list-ul"></i> <?php echo('Update User');?></a></li>
             
           </ul>
@@ -38,7 +38,7 @@
       	<div class="col-sm-12">
       	    <header class="panel-heading font-bold">Update User settings</header>
       	    <section class="panel">
-      	        <?php $atts= array( 'data-validate'=>'parsley'); echo form_open_multipart("users/update_user/$userid",$atts); ?>
+      	        <?php $atts= array( 'data-validate'=>'parsley'); echo form_open_multipart("admin/users/update_user/$userid",$atts); ?>
       	        
       	        <div class="panel-body">
       	        	

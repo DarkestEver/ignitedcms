@@ -37,7 +37,7 @@
  	       <div class="col-sm-12">
  	         <!-- .breadcrumb -->
  	         <ul class="breadcrumb">
- 	           <li><a href="<?php echo site_url('dashboard'); ?>"><i class="fa fa-home"></i> <?php echo ('Dashboard'); ?></a></li>
+ 	           <li><a href="<?php echo site_url('admin/dashboard'); ?>"><i class="fa fa-home"></i> <?php echo ('Dashboard'); ?></a></li>
  	           <li class='active'><a href="#"><i class="fa fa-list-ul"></i> <?php echo('Blog Posts');?></a></li>
  	           
  	         </ul>
@@ -65,7 +65,7 @@
                           
                         </div>
                         <div class="col-sm-2">
-                            <a href="<?php echo site_url("blog/insert_blog_post"); ?>">
+                            <a href="<?php echo site_url("admin/blog/insert_blog_post"); ?>">
                                 <button  type="submit" class="btn btn-purplet btn-s-xs pull-right" id="">
                                 <i class="fa fa-plus"></i> <strong>Add Post</strong></button>
                             </a>
@@ -77,7 +77,7 @@
 
 
 	           	<!-- search and sort -->
-              <?php $atts= array( 'data-validate'=>'parsley'); echo form_open_multipart('blog/search_posts_or_delete',$atts); ?>
+              <?php $atts= array( 'data-validate'=>'parsley'); echo form_open_multipart('admin/blog/search_posts_or_delete',$atts); ?>
 	           	<div class="row" >
 	           		<div class="col-sm-2">
   	           		<div class="btn  btn-white" data-toggle="popover" data-html="true" data-placement="top" data-content='
@@ -140,7 +140,7 @@
                     		<tr>
 		                        <td><input type="checkbox" name="chosen[]" value="<?php echo $id; ?>"></td>
 		                        <td>
-		                        	<a href="<?php echo site_url("blog/edit_blog_post/$id"); ?>"><?php echo $row->title; ?></a>
+		                        	<a href="<?php echo site_url("admin/blog/edit_blog_post/$id"); ?>"><?php echo $row->title; ?></a>
 		                        </td>
 		                        <td>...</td>
 		                        <td><?php echo my_pretty_date($row->blog_date); ?></td>

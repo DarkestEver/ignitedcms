@@ -5,7 +5,7 @@
             <!-- .breadcrumb -->
             <ul class="breadcrumb">
                 <li>
-                  <a href="<?php echo site_url('dashboard'); ?>"><i class="fa fa-home"></i> <?php echo ('Dashboard'); ?></a>
+                  <a href="<?php echo site_url('admin/dashboard'); ?>"><i class="fa fa-home"></i> <?php echo ('Dashboard'); ?></a>
                 </li>
                 <li class='active'>
                   <a href="#"><i class="fa fa-list-ul"></i> <?php echo('Menu');?></a>
@@ -71,7 +71,7 @@
                             
                             <div class="panel-body text-sm">
                                 
-                                  <?php $atts= array( 'data-validate'=>'parsley'); echo form_open_multipart('menu/add_page_to_menu',$atts); ?>
+                                  <?php $atts= array( 'data-validate'=>'parsley'); echo form_open_multipart('admin/menu/add_page_to_menu',$atts); ?>
                                   <!-- loop through all the pages -->
                                   <?php foreach ($query2->result() as $row): ?>
                                     <label>

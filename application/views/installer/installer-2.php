@@ -16,7 +16,7 @@
                     </div>
                     <?php } ?>
                     <p class="h2">Installation</p>
-                    <?php $atts = array( 'data-validate'=>'parsley'); echo form_open_multipart('installer/create_tables',$atts); ?>
+                    <?php $atts = array( 'data-validate'=>'parsley'); echo form_open_multipart('admin/installer/create_tables',$atts); ?>
                     <div class="form-group">
                         All right sparky, you've made it through this
                         part of the installation. Ignited CMS can now

@@ -110,7 +110,7 @@
         });
         $('#add-block').click(function (event) {
             $.ajax({
-                    url: '<?php echo site_url("shortcodes/box"); ?>',
+                    url: '<?php echo site_url("admin/shortcodes/box"); ?>',
                     type: 'post',
                     data: {},
                     success: function (data) {
@@ -121,7 +121,7 @@
 
         $('#add-slider').click(function (event) {
             $.ajax({
-                    url: '<?php echo site_url("shortcodes/slider"); ?>',
+                    url: '<?php echo site_url("admin/shortcodes/slider"); ?>',
                     type: 'post',
                     data: {},
                     success: function (data) {
@@ -138,7 +138,7 @@
 
         $('#add-code').click(function (event) {
             $.ajax({
-                    url: '<?php echo site_url("shortcodes/code"); ?>',
+                    url: '<?php echo site_url("admin/shortcodes/code"); ?>',
                     type: 'post',
                     data: {},
                     success: function (data) {
@@ -153,7 +153,7 @@
             var id = $(this).attr('id');
 
             $.ajax({
-                    url: '<?php echo site_url("shortcodes/image"); ?>',
+                    url: '<?php echo site_url("admin/shortcodes/image"); ?>',
                     type: 'post',
                     data: {id:id},
                     success: function (data) {
@@ -203,7 +203,7 @@
             var content = $('#sortable').html();
             var shorttag = tag;
             $.ajax({
-                url: '<?php echo site_url("shortcodes/save_to_database"); ?>',
+                url: '<?php echo site_url("admin/shortcodes/save_to_database"); ?>',
                 type: 'post',
                 data: {
                     content: content,

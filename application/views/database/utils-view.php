@@ -25,7 +25,7 @@
  	       <div class="col-sm-12">
  	         <!-- .breadcrumb -->
  	         <ul class="breadcrumb">
- 	           <li><a href="<?php echo site_url('dashboard'); ?>"><i class="fa fa-home"></i> <?php echo ('Dashboard'); ?></a></li>
+ 	           <li><a href="<?php echo site_url('admin/dashboard'); ?>"><i class="fa fa-home"></i> <?php echo ('Dashboard'); ?></a></li>
  	           <li class='active'><a href="#"><i class="fa fa-list-ul"></i> <?php echo('Database Utilities');?></a></li>
  	           
  	         </ul>
@@ -40,7 +40,7 @@
  	           <section class="panel">
  	               
  	               <div class="panel-body">
- 	               	<?php $atts= array( 'data-validate'=>'parsley'); echo form_open_multipart('database/backup',$atts); ?>
+ 	               	<?php $atts= array( 'data-validate'=>'parsley'); echo form_open_multipart('admin/database/backup',$atts); ?>
  	               	
  	               	<button type="submit" class="pull-right btn btn-purplet btn-s-xs " ><strong>Backup Database</strong></button>
  	               	
@@ -64,7 +64,7 @@
  	               
  	               <div class="panel-body">
  	               
- 	               	 <?php $atts= array( 'data-validate'=>'parsley'); echo form_open_multipart('database/replace_urls',$atts); ?>
+ 	               	 <?php $atts= array( 'data-validate'=>'parsley'); echo form_open_multipart('admin/database/replace_urls',$atts); ?>
  	               	 
  	               	 <div class="form-group">
  	               	     <label>Replacement url: (*Please make sure to have a trailing forward slash on your url)</label>

@@ -73,7 +73,7 @@ class Login extends CI_Controller {
                       
                       $this->session->set_userdata( $array );
                       //login successful
-                      redirect('dashboard','refresh');
+                      redirect('admin/dashboard','refresh');
               }
               else
               {
@@ -188,7 +188,7 @@ class Login extends CI_Controller {
             $this->db->update('site', $object);
 
 
-            redirect('installer/set_time_local','refresh'); 
+            redirect('admin/installer/set_time_local','refresh'); 
           }
   
       }
@@ -204,7 +204,7 @@ class Login extends CI_Controller {
       {
         $this->session->sess_destroy();
 
-        redirect("installer/login", "refresh");
+        redirect("admin/installer/login", "refresh");
   
       }
 

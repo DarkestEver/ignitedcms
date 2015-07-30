@@ -13,12 +13,12 @@ class Blog extends CI_Controller {
 
 				if($pass != true)
 				{
-					redirect('dashboard','refresh');
+					redirect('admin/dashboard','refresh');
 				}
 		  	}
 		  	else
 		  	{
-		  		redirect('installer','refresh');
+		  		redirect('admin/installer','refresh');
 		  	}
 		}
 	}
@@ -135,7 +135,7 @@ class Blog extends CI_Controller {
 			}
 			
 			//return to page view
-			redirect("blog","refresh");
+			redirect("admin/blog","refresh");
 		
 		}
 	}
@@ -191,7 +191,7 @@ class Blog extends CI_Controller {
 	      	$this->session->set_flashdata('type', '1');
 	      	$this->session->set_flashdata('msg', '<strong>Success</strong> Post edited');
 
-	      	redirect('blog', 'refresh');
+	      	redirect('admin/blog', 'refresh');
 
 	}
 
@@ -208,7 +208,7 @@ class Blog extends CI_Controller {
 
 		$this->session->set_flashdata('type', '1');
 		$this->session->set_flashdata('msg', '<strong>Success</strong> Post Deleted');
-		redirect('blog', 'refresh');
+		redirect('admin/blog', 'refresh');
 		
 	}
 
@@ -241,7 +241,7 @@ class Blog extends CI_Controller {
 			$this->session->set_flashdata('type', '0');
 			$this->session->set_flashdata('msg', "<strong>Failed</strong> $errors");
 			
-			redirect('blog','refresh');
+			redirect('admin/blog','refresh');
 
         }
         //successful
@@ -281,7 +281,7 @@ class Blog extends CI_Controller {
 			$this->session->set_flashdata('type', '1');
 			$this->session->set_flashdata('msg', '<strong>Success</strong> Blog post has been added');
 			
-			redirect('blog','refresh');
+			redirect('admin/blog','refresh');
 			
 			
         }

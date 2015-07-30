@@ -27,7 +27,7 @@
 	      <div class="col-sm-12">
 	        <!-- .breadcrumb -->
 	        <ul class="breadcrumb">
-	          <li><a href="<?php echo site_url('dashboard'); ?>"><i class="fa fa-home"></i> <?php echo ('Dashboard'); ?></a></li>
+	          <li><a href="<?php echo site_url('admin/dashboard'); ?>"><i class="fa fa-home"></i> <?php echo ('Dashboard'); ?></a></li>
 	          <li class='active'><a href="#"><i class="fa fa-list-ul"></i> <?php echo('Permissions');?></a></li>
 	          
 	        </ul>
@@ -53,7 +53,7 @@
                           
                         </div>
                         <div class="col-sm-2">
-                            <a href="<?php echo site_url("permissions/new_group_view"); ?>">
+                            <a href="<?php echo site_url("admin/permissions/new_group_view"); ?>">
                                 <button  type="submit" class="btn btn-purplet btn-s-xs pull-right" id="">
                                 <i class="fa fa-plus"></i> <strong>New Group</strong></button>
                             </a>
@@ -63,7 +63,7 @@
                     <div class="line"></div>
 
 
-                 <?php $atts= array( 'data-validate'=>'parsley'); echo form_open_multipart('permissions/search_permissions_or_delete',$atts); ?>
+                 <?php $atts= array( 'data-validate'=>'parsley'); echo form_open_multipart('admin/permissions/search_permissions_or_delete',$atts); ?>
 	           	<!-- search and sort -->
 	           	<div class="row" >
 	           		<div class="col-sm-2">
@@ -128,7 +128,7 @@
                     		<tr>
 		                        <td><input type="checkbox" name="chosen[]" value="<?php echo $id; ?>"></td>
 		                        <td>
-		                        	<a href="<?php echo site_url("permissions/update_permission_view/$id"); ?>"><?php echo $row->groupName; ?></a>
+		                        	<a href="<?php echo site_url("admin/permissions/update_permission_view/$id"); ?>"><?php echo $row->groupName; ?></a>
 		                        </td>
 		                        <td>...</td>
 		                        <td>Jul 25, 2013</td>

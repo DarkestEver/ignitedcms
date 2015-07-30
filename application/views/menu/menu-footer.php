@@ -44,7 +44,7 @@
  
           $.ajax({
               type: "POST",
-              url: "<?php echo site_url('menu/save_to_database'); ?>",
+              url: "<?php echo site_url('admin/menu/save_to_database'); ?>",
               data: ({'data1':data1}),
               dataType: "html",
               
@@ -60,7 +60,7 @@
         $('#pullfromdatabase').click(function (event) {
           $.ajax({
               type: "POST",
-              url: "<?php echo site_url('menu/pull_all_pages'); ?>",
+              url: "<?php echo site_url('admin/menu/pull_all_pages'); ?>",
               
               dataType: "html",
               

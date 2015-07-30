@@ -19,7 +19,7 @@ class Help extends CI_Controller {
 			  	}
 			  	else
 			  	{
-			  		redirect('login','refresh');
+			  		redirect('admin/login','refresh');
 			  	}
 		  }
 	}

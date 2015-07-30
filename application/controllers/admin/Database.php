@@ -13,12 +13,12 @@ class Database extends CI_Controller {
 
 					if($pass != true)
 					{
-						redirect('dashboard','refresh');
+						redirect('admin/dashboard','refresh');
 					}
 			  	}
 			  	else
 			  	{
-			  		redirect('installer','refresh');
+			  		redirect('admin/installer','refresh');
 			  	}
 		  }
 	}
@@ -67,7 +67,7 @@ class Database extends CI_Controller {
 		$this->load->helper('download');
 		force_download('mybackup.gz', $backup);	
 
-		redirect("database","refresh");
+		redirect("admin/database","refresh");
 
 
 	}
@@ -112,7 +112,7 @@ class Database extends CI_Controller {
 		$this->session->set_flashdata('type', '1');
 		$this->session->set_flashdata('msg', '<strong>Success</strong> Urls have been replaced!');
 
-		redirect("database","refresh");
+		redirect("admin/database","refresh");
 
 
 	}

@@ -4,7 +4,7 @@
       <div class="col-sm-12">
        
         <ul class="breadcrumb">
-          <li><a href="<?php echo site_url('blog'); ?>"><i class="fa fa-home"></i> <?php echo $this->uri->segment(1, 0); ?></a></li>
+          <li><a href="<?php echo site_url('admin/blog'); ?>"><i class="fa fa-home"></i> <?php echo $this->uri->segment(2, 0); ?></a></li>
           <li class='active'><a href="#"><i class="fa fa-list-ul"></i> <?php echo('Add blog');?></a></li>
           
         </ul>
@@ -26,7 +26,7 @@
                       <div style="margin-top:30px;"></div>
 
                         <!-- important make sure class is form-horizontal -->
-                        <form  method="post" action="<?php echo site_url('blog/actual_insert_blog_post'); ?>"class="form-horizontal" id="blog_form" data-validate="parsley" accept-charset="utf-8" enctype="multipart/form-data">
+                        <form  method="post" action="<?php echo site_url('admin/blog/actual_insert_blog_post'); ?>"class="form-horizontal" id="blog_form" data-validate="parsley" accept-charset="utf-8" enctype="multipart/form-data">
                           <div class="panel-body"> 
 
                             <div class="form-group"> 
