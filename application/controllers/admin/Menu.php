@@ -104,8 +104,9 @@ class Menu extends CI_Controller {
 
 				$name = $row->name;
 				$url = $row->id;
-				$object = array('father' => 'null', 'innerhtml' => "$name|$url" );
-				$this->db->insert('menu2', $object);
+				
+				// $object = array('father' => 'null', 'innerhtml' => "$name|$url" );
+				// $this->db->insert('menu2', $object);
 
 				$html_string = $html_string . 
 				"<li class='dd-item dd3-item' id='id$unique_id'>
@@ -134,6 +135,9 @@ class Menu extends CI_Controller {
 
 	public function save_to_database()
 	{
+		//delete first
+		$this->db->empty_table('menu2');
+
 		$html = trim($this->input->post('data1'));
         
         $this->load->model('Stuff_menu');

@@ -134,7 +134,7 @@ class Installer extends CI_Controller {
 			if (mysqli_query($con,$sql)) 
 			{
 			    //echo "Database my_db created successfully";
-			    if ( ! write_file('./application/config/database.php', $data))
+			    if ( ! write_file(APPPATH ."config/database.php", $data))
 				{
 				     echo 'Unable to write the file do you have permissions!';
 				}
@@ -274,19 +274,35 @@ class Installer extends CI_Controller {
 
 
 	  /**
-	   *  @Description: save time local setting to config file
-	   *       @Params: _post time
+	   *  @Description: save time local setting to config file and set
+	   *			    random encryption key
+	   *       @Params: _POST time local
 	   *
 	   *  	 @returns: returns
 	   */
 	  public function save_time_local()
 	  {
 
-	  	//To do: write over config file
+			//To do: write over config file
 
-	  	redirect('admin/installer/login', 'refresh');
+			//create and set a random encryption key
+			$this->load->library('encryption');
+			$key = bin2hex($this->encryption->create_key(16));
 
+			$content = file_get_contents(APPPATH ."config/config.php");
 
+			$content = str_replace("\$config['encryption_key'] = ''", "\$config['encryption_key'] = '$key'", $content);
+
+			if ( ! write_file(APPPATH ."config/config.php", $content))
+			{
+			 	echo 'Unable to write the file do you have permissions!';
+			}
+			else
+			{
+			//file written
+			}
+
+			redirect('admin/installer/login', 'refresh');
 
 	  }
 
