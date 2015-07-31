@@ -10,6 +10,13 @@
 
 class Stuff_user extends CI_Model {
 
+	 public function __construct()
+	 {
+	 	  parent::__construct();
+
+	 	  include('./resources/password/password.php');
+	 }
+
 	 /**
 	  *  @Description: add new user 
 	  *       @Params: name (username must be unique),email (unique),password,permissiongroup id
@@ -69,6 +76,119 @@ class Stuff_user extends CI_Model {
 
 		return $pass;
 
+
+	}
+
+	 /**
+	  *  @Description: gets the current user's email address
+	  *       @Params: userid
+	  *
+	  *  	 @returns: email
+	  */
+	public function get_user_email($userid)
+	{
+		$this->db->select('email');
+		$this->db->from('user');
+		$this->db->where('id', $userid);
+		$this->db->limit(1);
+
+		$query = $this->db->get();
+		$email = "";
+		foreach ($query->result() as $row) 
+		{
+			$email =  $row->email;
+		}
+		return $email;
+
+	}
+
+
+	 /**
+	  *  @Description: update password checks to see if minimum requirements
+	  *       @Params: password, activ_key
+	  *
+	  *  	 @returns: returns
+	  */
+	public function update_password($password,$activ_key)
+	{
+		
+		$pass = "*";
+		//check if password is secure
+		if($this->check_password($password) == false)
+		{
+			$pass = $pass . "<br/>Password does not meet minimum requirements!";
+		}
+		else
+		{
+			$hashed_password = password_hash($password, PASSWORD_BCRYPT);
+
+			$object = array('password' => $hashed_password );
+
+			$this->db->where('activ_key', $activ_key);
+			$this->db->update('user', $object);
+
+		}
+		
+
+
+	}
+
+
+
+	 /**
+	  *  @Description: send email link password reset
+	  *                checks to see if username is valid
+	  *       @Params: username
+	  *
+	  *  	 @returns: string success or fail
+	  */
+	public function send_reset($username)
+	{
+		$this->db->select('*');
+		$this->db->from('user');
+		$this->db->where('name', $username);
+		$this->db->limit(1);
+
+		$query = $this->db->get();
+		
+		if($query->num_rows() > 0)
+		{
+			//get the email
+			$email = "";
+			foreach ($query->result() as $row) 
+			{
+				$email = $row->email;
+			}
+
+			
+			$hash = random_string('md5');
+
+			$url = site_url('admin/login/reset_view');
+			$url = $url . "/$hash";
+
+			$b = anchor($url, 'link', 'attributs');
+
+			$body = "Please click the link to reset your password. <br/> $b";
+
+
+			$this->load->model('Stuff_email');
+			$this->Stuff_email->my_email($email,"Me", 'Password Reset',$body);
+
+
+			//finally update user record activ_key
+			$object = array('activ_key' => $hash );
+
+			$this->db->where('name', $username);
+			$this->db->update('user', $object);
+
+			return "sent";
+
+		}
+		else
+		{
+			return "Username doesn't exist!";
+
+		}
 
 	}
 
@@ -196,8 +316,6 @@ class Stuff_user extends CI_Model {
 
 
       	 }
-      	 
-
 
       }
 

@@ -33,6 +33,8 @@
                    
                         
                          <button type="submit" class="btn btn-purplet btn-s-xs " style="margin-top:20px;"><strong>OK</strong></button>
+
+                         <a class="pull-right" href="<?php echo site_url('admin/login/forgot_password_view'); ?>">Forgot Password?</a>
                         
                        <?php echo form_close(); ?> 
 

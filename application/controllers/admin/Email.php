@@ -36,19 +36,31 @@ class Email extends CI_Controller {
 		$this->db->limit(1);
 
 		$query2 = $this->db->get();
+
+		$protocol = "";
+		
+		foreach ($query2->result() as $row) 
+		{
+			$protocol =  $row->protocol;
+		}
+		
+
+
 		$data['query2'] = $query2;
+
+		$data['protocol'] = $protocol;
 
 		$this->load->view('admin/header');
 		$this->load->view('admin/body');
 		$this->load->view('admin/email/email-view',$data);
-		$this->load->view('admin/footer');
+		$this->load->view('admin/email/footer',$data);
 	}
 
 	 
 	
 
 	 /**
-	  *  @Description: save smtp email settings to db
+	  *  @Description: save smtp/phpmail email settings to db
 	  *       @Params: _POST $protocol; 
 	  *				  $smtp_host;
 	  *				  $smtp_port;
@@ -92,7 +104,11 @@ class Email extends CI_Controller {
 	{
 		$this->load->model('Stuff_email');
 
-		$email  = $this->input->post('email');
+		//get user's email address
+		$userid = $this->session->userdata('userid');
+
+		$this->load->model('Stuff_user');
+		$email = $this->Stuff_user->get_user_email($userid);
 
 		$this->Stuff_email->my_email($email,'admin@ignitedcms.com','Test from IgnitedCMS',"Congratulations,your email works");
 
@@ -103,57 +119,6 @@ class Email extends CI_Controller {
 
 
 	}
-
-	 /**
-	  *  @Description: test using php's mail function
-	  *       @Params: _POST email2
-	  *
-	  *  	 @returns: returns
-	  */
-	public function php_mail_test()
-	{
-	  //use php's mail function
-	  $config['protocol']  = "mail"; 
-      
-      $to = $this->input->post('email2');
-
-
-
-	  $from = "admin@ignitedcms.com";
-	  $to   = $to;
-	  $body = "Congratulations, your email works";
-	  $subject = "Test from IgnitedCMS";
-	  
-
-
-      $this->load->library('email');
-      $this->email->initialize($config);
-      $this->email->set_mailtype("html");
-
-      $this->email->set_newline("\r\n");
-
-      $this->email->from($from, 'Name');
-      $this->email->to($to);   
-      $this->email->subject($subject);   
-      $this->email->message($body);
-
-      
-      // $this->email->attach($file);
-
-      if($this->email->send())
-      {
-        //echo('Activation code has been successfully sent to your Email Address');
-      }
-
-      else
-      {
-        show_error($this->email->print_debugger());
-      }    
-      redirect("admin/email", "refresh");
-
-	}
-
-
 
 }
 

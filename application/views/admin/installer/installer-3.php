@@ -24,6 +24,12 @@
                         <label>Site Title</label>
                         <input name="site" type="text" data-required="true" data-maxlength="40" class="form-control" placeholder="Type here" data-toggle="tooltip" data-placement="top" title="Site title" value="">
                     </div>
+
+                    <div class="form-group">
+                        <label>Email</label>
+                        <input name="email" type="text" data-type="email" data-required="true" data-maxlength="100" class="form-control" placeholder="Type here" data-toggle="tooltip" data-placement="top" title="Email address" value="">
+                    </div>
+
                    <div class="form-group pull-in">
                           <div class="col-sm-6">
                             <label>Enter admin password *</label>

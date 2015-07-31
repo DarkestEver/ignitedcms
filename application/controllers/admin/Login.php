@@ -19,6 +19,113 @@ class Login extends CI_Controller {
 
       }
 
+       /**
+        *  @Description: load the view for reset password
+        *       @Params: username or email address
+        *
+        *     @returns: nothing
+        */  
+      public function forgot_password_view()
+      {
+        $this->load->view('admin/header');
+        $this->load->view('admin/body');
+        $this->load->view('admin/login/forgot');
+        $this->load->view('admin/footer');
+      }
+
+
+       /**
+        *  @Description: accepts _GET var
+        *       @Params: params
+        *
+        *     @returns: returns
+        */
+      public function reset_view($md5)
+      {
+         //check if md5 hash is valid
+         $this->db->select('*');
+         $this->db->from('user');
+         $this->db->where('activ_key', $md5);
+
+         $query = $this->db->get();
+
+         $data['key'] = $md5;
+         
+         if($query->num_rows() > 0)
+         {
+            $this->load->view('admin/header');
+            $this->load->view('admin/body');
+            $this->load->view('admin/login/reset', $data);
+            $this->load->view('admin/footer');
+
+         }
+         else
+         {
+            echo 'invalid key!';
+         }
+      }
+
+
+       /**
+        *  @Description: send an email link to reset password
+        *       @Params: _POST username
+        *
+        *     @returns: nothing
+        */
+      public function reset_password()
+      {
+         $username = $this->input->post('name');
+         //get the email address
+         $this->load->model('Stuff_user');
+         $err = $this->Stuff_user->send_reset($username);
+
+         //echo $err;
+         if($err === "sent")
+         {
+            $this->session->set_flashdata('type', '1');
+            $this->session->set_flashdata('msg', "<strong>Success</strong> Check your email!");
+         }
+         else
+         {
+           $this->session->set_flashdata('type', '0');
+           $this->session->set_flashdata('msg', "<strong>Error</strong> $err");
+
+         }
+         
+
+         redirect("admin/login/forgot_password_view","refresh");
+
+      }
+
+       /**
+        *  @Description: update the password
+        *       @Params: _POST password, $md5
+        *
+        *     @returns: returns
+        */
+      public function update_password($md5)
+      {
+          $password = $this->input->post('password');
+
+          $this->load->model('Stuff_user');
+
+          if($this->Stuff_user->check_password($password) === true)
+          {
+             $this->Stuff_user->update_password($password,$md5);
+
+             $this->session->set_flashdata('type', '1');
+             $this->session->set_flashdata('msg', '<strong>Success</strong> Password updated!');
+          }
+          else
+          {
+            $this->session->set_flashdata('type', '0');
+            $this->session->set_flashdata('msg', '<strong>Error</strong> <br/>Password does not meet minimum requirements!');
+          }
+
+          redirect("admin/login/reset_view/$md5","refresh");
+
+      }
+
       
       
       public function validate_login()
@@ -146,7 +253,7 @@ class Login extends CI_Controller {
             //-------------------------------
             $site = $this->input->post('site');
             $password = $this->input->post('password1');
-            //$email = $this->input->post('email');
+            $email = $this->input->post('email');
 
 
             
@@ -174,6 +281,7 @@ class Login extends CI_Controller {
                'name' => 'admin' ,
                'password' => $hashed_password ,
                'isadmin' => '1',
+               'email'   => $email,
                'permissiongroup' => '1',
                'joindate'  => date("Y-m-d H:i:s")
             );

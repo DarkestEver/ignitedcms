@@ -60,6 +60,14 @@
             background-color: #FDEEEE;
         }
 
+        /*small label text*/
+        .igs-small{
+            color: #999;
+            font-size: 12px;
+            line-height: 20px;
+            
+
+        }
 
 
         /*For the big icons on dashboard*/

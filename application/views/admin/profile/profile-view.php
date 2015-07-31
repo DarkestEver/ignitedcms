@@ -60,7 +60,7 @@
 				        	</div>
 
 				        	<div class="form-group">
-				        	    <label>Change Password?</label>
+				        	    <label>Change Password? </label> <div class="igs-small">(Leave blank if you don't wish to change)</div>
 				        	    <input name="password" type="password"  data-maxlength="200" class="form-control" placeholder="Type here" data-toggle="tooltip" data-placement="top" title="Change your Password" value="">
 				        	</div>
 				        	<button type="submit" class="btn btn-purplet btn-s-xs " ><strong>ok</strong></button>

@@ -36,50 +36,87 @@ class Stuff_email extends CI_Model {
     		$smtp_user = $row->smtp_user;
     		$smtp_pass = $row->smtp_pass;
       }
-      
-      /* E.g Settings
-		'smtp';
-		'ssl://smtp.googlemail.com';
-		 465;
-		'email.com';
-		'password';
-		*/
 
-
-
-      $config['protocol']  = $protocol; 
-      $config['smtp_host'] = $smtp_host;
-      $config['smtp_port'] = $smtp_port;
-      $config['smtp_user'] = $smtp_user;
-      $config['smtp_pass'] = $smtp_pass;
-
-
-
-      $this->load->library('email');
-      $this->email->initialize($config);
-      $this->email->set_mailtype("html");
-
-      $this->email->set_newline("\r\n");
-
-      $this->email->from($from, 'Name');
-      $this->email->to($to);   
-      $this->email->subject($subject);   
-      $this->email->message($body);
-
-      // $path = $this->config->item('server_root');
-      // $file = 'license.txt';
-
-      // $this->email->attach($file);
-
-      if($this->email->send())
+      if($protocol === "phpmail")
       {
-        //echo('Activation code has been successfully sent to your Email Address');
-      }
+          $config['protocol']  = 'mail';
+          
 
+          $this->load->library('email');
+          $this->email->initialize($config);
+          $this->email->set_mailtype("html");
+
+          $this->email->set_newline("\r\n");
+
+          $this->email->from($from, 'Name');
+          $this->email->to($to);   
+          $this->email->subject($subject);   
+          $this->email->message($body);
+
+          // $path = $this->config->item('server_root');
+          // $file = 'license.txt';
+
+          // $this->email->attach($file);
+
+          if($this->email->send())
+          {
+            //echo('Activation code has been successfully sent to your Email Address');
+          }
+
+          else
+          {
+            show_error($this->email->print_debugger());
+          }    
+      }
       else
       {
-        show_error($this->email->print_debugger());
-      }    
+
+          //smtp
+         /* E.g Settings
+          'smtp';
+          'ssl://smtp.googlemail.com';
+           465;
+          'email.com';
+          'password';
+          */
+          $config['protocol']  = $protocol; 
+          $config['smtp_host'] = $smtp_host;
+          $config['smtp_port'] = $smtp_port;
+          $config['smtp_user'] = $smtp_user;
+          $config['smtp_pass'] = $smtp_pass;
+
+
+
+          $this->load->library('email');
+          $this->email->initialize($config);
+          $this->email->set_mailtype("html");
+
+          $this->email->set_newline("\r\n");
+
+          $this->email->from($from, 'Name');
+          $this->email->to($to);   
+          $this->email->subject($subject);   
+          $this->email->message($body);
+
+          // $path = $this->config->item('server_root');
+          // $file = 'license.txt';
+
+          // $this->email->attach($file);
+
+          if($this->email->send())
+          {
+            //echo('Activation code has been successfully sent to your Email Address');
+          }
+
+          else
+          {
+            show_error($this->email->print_debugger());
+          }    
+
+
+      }
+
+      
   }
 
 	
