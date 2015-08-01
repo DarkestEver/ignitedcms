@@ -41,6 +41,8 @@
                         
                          <button type="submit" class="btn btn-purplet btn-s-xs " style="margin-top:20px;"><strong>Send Email</strong></button>
 
+                         <a href=" <?php echo site_url("admin/installer/login"); ?>" class="pull-right">Return to Login?</a>
+
                          
                         
                        <?php echo form_close(); ?> 

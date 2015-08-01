@@ -28,7 +28,7 @@ class Login extends CI_Controller {
       public function forgot_password_view()
       {
         $this->load->view('admin/header');
-        $this->load->view('admin/body');
+        $this->load->view('admin/body-installer');
         $this->load->view('admin/login/forgot');
         $this->load->view('admin/footer');
       }
@@ -54,7 +54,7 @@ class Login extends CI_Controller {
          if($query->num_rows() > 0)
          {
             $this->load->view('admin/header');
-            $this->load->view('admin/body');
+            $this->load->view('admin/body-installer');
             $this->load->view('admin/login/reset', $data);
             $this->load->view('admin/footer');
 
@@ -186,7 +186,7 @@ class Login extends CI_Controller {
               {
                   $data['errors'] =   'Password is incorrect, check your caps lock is not on!';
                   $this->load->view('admin/header');
-                  $this->load->view('admin/body');
+                  $this->load->view('admin/body-installer');
                   $this->load->view('admin/login', $data);
                   $this->load->view('admin/footer');
               }
@@ -195,7 +195,7 @@ class Login extends CI_Controller {
             {
                 $data['errors'] = 'User Does not exist';
                 $this->load->view('admin/header');
-                $this->load->view('admin/body');
+                $this->load->view('admin/body-installer');
                 $this->load->view('admin/login', $data);
                 $this->load->view('admin/footer');
             
@@ -267,7 +267,7 @@ class Login extends CI_Controller {
                    Password must be at least 6 characters long';
 
                    $this->load->view('admin/header');
-                   $this->load->view('admin/body');
+                   $this->load->view('admin/body-installer');
                    $this->load->view('admin/installer/installer-3', $data);
                    $this->load->view('admin/footer');
 

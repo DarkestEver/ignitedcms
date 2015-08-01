@@ -318,7 +318,7 @@ class Installer extends CI_Controller {
 	public function login()
 	{
 		$this->load->view('admin/header');
-		$this->load->view('admin/body');
+		$this->load->view('admin/body-installer');
 		$this->load->view('admin/login');
 		$this->load->view('admin/footer');
 	}
