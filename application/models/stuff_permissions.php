@@ -166,6 +166,10 @@ class Stuff_permissions extends CI_Model {
 		{
 			return "fa fa-random big";
 		}
+		if($controller == "product_admin")
+		{
+			return "fa fa-shopping-cart big";
+		}
 	}
 
 }

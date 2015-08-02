@@ -4,7 +4,7 @@
       <div class="col-sm-12">
        
         <ul class="breadcrumb">
-          <li><a href="<?php echo site_url('product_admin'); ?>"><i class="fa fa-home"></i> <?php echo 'Products'; ?></a></li>
+          <li><a href="<?php echo site_url('admin/product_admin'); ?>"><i class="fa fa-home"></i> <?php echo 'Products'; ?></a></li>
           <li class='active'><a href="#"><i class="fa fa-list-ul"></i> <?php echo('Add Product');?></a></li>
           
         </ul>
@@ -26,7 +26,7 @@
                       <div style="margin-top:30px;"></div>
 
                         <!-- important make sure class is form-horizontal -->
-                        <form  method="post" action="<?php echo site_url('product_admin/actual_insert_product'); ?>"class="form-horizontal" id="product_form" data-validate="parsley" accept-charset="utf-8" enctype="multipart/form-data">
+                        <form  method="post" action="<?php echo site_url('admin/product_admin/actual_insert_product'); ?>"class="form-horizontal" id="product_form" data-validate="parsley" accept-charset="utf-8" enctype="multipart/form-data">
                           <div class="panel-body"> 
 
                             <div class="form-group"> 

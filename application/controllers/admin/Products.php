@@ -39,10 +39,10 @@ class Products extends CI_Controller {
 
 		//load the view
 
-		$this->load->view('sitepreview/header');
-		$this->load->view('sitepreview/body',$data);
-		$this->load->view('products/product_page',$data);
-		$this->load->view('sitepreview/footer');
+		$this->load->view('custom/header');
+		$this->load->view('custom/body',$data);
+		$this->load->view('admin/products/product_page',$data);
+		$this->load->view('custom/footer');
 
 
 	}
@@ -80,10 +80,10 @@ class Products extends CI_Controller {
 
 		
 		//load the view
-		$this->load->view('sitepreview/header');
-		$this->load->view('sitepreview/body',$data);
-		$this->load->view('products/product_detail',$data);
-		$this->load->view('sitepreview/footer');
+		$this->load->view('custom/header');
+		$this->load->view('custom/body',$data);
+		$this->load->view('admin/products/product_detail',$data);
+		$this->load->view('custom/footer');
 
 	}
 

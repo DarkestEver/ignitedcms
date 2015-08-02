@@ -4,7 +4,7 @@
 	  <div class="col-sm-12">
 	      <header class="panel-heading font-bold">Upload Product image</header>
 	      <section class="panel">
-	          <?php $atts= array( 'data-validate'=>'parsley'); echo form_open_multipart("product_admin/upload_img/$id",$atts); ?>
+	          <?php $atts= array( 'data-validate'=>'parsley'); echo form_open_multipart("admin/product_admin/upload_img/$id",$atts); ?>
 	          
 	          <div class="panel-body">
 	          	<div class="form-group">

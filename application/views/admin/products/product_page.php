@@ -6,7 +6,7 @@
                  <?php foreach ($query->result() as $row): ?>
 
                  <?php $id = $row->id; ?>
-                 <a href="<?php echo site_url("products/product_details/$id"); ?>">
+                 <a href="<?php echo site_url("admin/products/product_details/$id"); ?>">
                  <div class="col-sm-4">
 	                <div class="post-item">
 	                    <div class="post-media">

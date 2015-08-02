@@ -41,7 +41,7 @@ class Pages extends CI_Controller {
 
 		$this->load->view('admin/header');
 		$this->load->view('admin/body');
-		$this->load->view('admin/template/default',$data);
+		$this->load->view('admin/pages/default',$data);
 		$this->load->view('admin/footer');
 	}
 
@@ -116,7 +116,7 @@ class Pages extends CI_Controller {
 
 		$this->load->view('admin/header');
 		$this->load->view('admin/body');
-		$this->load->view('admin/template/default',$data);
+		$this->load->view('admin/pages/default',$data);
 		$this->load->view('admin/footer');
 
 
@@ -262,7 +262,7 @@ class Pages extends CI_Controller {
 
 			$this->load->view('admin/header');
 			$this->load->view('admin/body');
-			$this->load->view('admin/template/default',$data);
+			$this->load->view('admin/pages/default',$data);
 			$this->load->view('admin/footer');
 		}
 

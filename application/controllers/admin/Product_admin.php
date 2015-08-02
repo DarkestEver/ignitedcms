@@ -13,12 +13,12 @@ class Product_admin extends CI_Controller {
 
 					if($pass != true)
 					{
-						redirect('dashboard','refresh');
+						redirect('admin/dashboard','refresh');
 					}
 			  	}
 			  	else
 			  	{
-			  		redirect('installer','refresh');
+			  		redirect('admin/installer','refresh');
 			  	}
 		  }
 	}
@@ -53,7 +53,7 @@ class Product_admin extends CI_Controller {
 		$this->db->where('id', $productid);
 		$this->db->delete('products');
 
-		redirect('product_admin','refresh');
+		redirect('admin/product_admin','refresh');
 	}
 
 
@@ -144,7 +144,7 @@ class Product_admin extends CI_Controller {
 			$this->session->set_flashdata('type', '0');
 			$this->session->set_flashdata('msg', "<strong>Failed</strong> $errors");
 			
-			redirect('product_admin','refresh');
+			redirect('admin/product_admin','refresh');
 
         }
         //successful
@@ -168,7 +168,7 @@ class Product_admin extends CI_Controller {
 			$this->session->set_flashdata('type', '1');
 			$this->session->set_flashdata('msg', '<strong>Success</strong> Product image has been added');
 
-			redirect('product_admin','refresh');
+			redirect('admin/product_admin','refresh');
 		}
 
 	}
@@ -216,7 +216,7 @@ class Product_admin extends CI_Controller {
 			$this->session->set_flashdata('type', '0');
 			$this->session->set_flashdata('msg', "<strong>Failed</strong> $errors");
 			
-			redirect('product_admin','refresh');
+			redirect('admin/product_admin','refresh');
 
         }
         //successful
@@ -241,7 +241,7 @@ class Product_admin extends CI_Controller {
 			$this->session->set_flashdata('type', '1');
 			$this->session->set_flashdata('msg', '<strong>Success</strong> Product spec has been added');
 
-			redirect('product_admin','refresh');
+			redirect('admin/product_admin','refresh');
 		}
 
 
@@ -272,7 +272,7 @@ class Product_admin extends CI_Controller {
 		$this->db->where('id', $productid);
 		$this->db->update('products', $object);
 
-		redirect('product_admin','refresh');
+		redirect('admin/product_admin','refresh');
 
 	}
 
@@ -305,7 +305,7 @@ class Product_admin extends CI_Controller {
 			$this->session->set_flashdata('type', '1');
 			$this->session->set_flashdata('msg', '<strong>Success</strong> Product has been added');
 			
-			redirect('product_admin','refresh');
+			redirect('admin/product_admin','refresh');
 	    
 	}
 

@@ -73,7 +73,7 @@
 
             $.ajax({
                 type: "POST",
-                url: "<?php echo site_url('product_admin/actual_insert_product'); ?>",
+                url: "<?php echo site_url('admin/product_admin/actual_insert_product'); ?>",
                 data: file,
                 
                 

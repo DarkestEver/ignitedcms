@@ -23,7 +23,7 @@
               <div class="col-sm-12">
                 <!-- .breadcrumb -->
                 <ul class="breadcrumb">
-                  <li><a href="<?php echo site_url('dashboard'); ?>"><i class="fa fa-home"></i> <?php echo "Dashboard"; ?></a></li>
+                  <li><a href="<?php echo site_url('admin/dashboard'); ?>"><i class="fa fa-home"></i> <?php echo "Dashboard"; ?></a></li>
                   <li class='active'><a href="#"><i class="fa fa-list-ul"></i> <?php echo('Products');?></a></li>
                   
                 </ul>
@@ -40,11 +40,11 @@
 
                     <div class="row">
                         <div class="col-sm-10">
-                           <!--  <a target="_blank" href=" <?php echo site_url('blog/preview'); ?>">Preview Blog</a> -->
+                          
                           
                         </div>
                         <div class="col-sm-2">
-                            <a href="<?php echo site_url("product_admin/insert_product"); ?>">
+                            <a href="<?php echo site_url("admin/product_admin/insert_product"); ?>">
                                 <button  type="submit" class="btn btn-purplet btn-s-xs pull-right" id="">
                                 <i class="fa fa-plus"></i> <strong>Add Product</strong></button>
                             </a>
@@ -64,13 +64,13 @@
                         <strong><?php echo($row->name); ?></strong>
                     </div>
                     <div class="col-sm-2" style="margin-top:20px;">
-                        <div class="pull-right"> <?php echo anchor("product_admin/spec_view/$id", "Upload spec", 'attributs'); ?></div>
+                        <div class="pull-right"> <?php echo anchor("admin/product_admin/spec_view/$id", "Upload spec", 'attributs'); ?></div>
                     </div>
                     <div class="col-sm-2" style="margin-top:20px;">
-                        <div class="pull-right"> <?php echo anchor("product_admin/img_view/$id", "Upload image", 'attributs'); ?></div>
+                        <div class="pull-right"> <?php echo anchor("admin/product_admin/img_view/$id", "Upload image", 'attributs'); ?></div>
                     </div>
                     <div class="col-sm-2" style="margin-top:20px;">
-                        <div class="pull-right"> <?php echo anchor("product_admin/edit_product/$id", "View/Edit", 'attributs'); ?></div>
+                        <div class="pull-right"> <?php echo anchor("admin/product_admin/edit_product/$id", "View/Edit", 'attributs'); ?></div>
                     </div>
                     <div class="clearfix"></div>
                    
