@@ -78,7 +78,7 @@
 			        	
 			        	<div class="form-group">
 			        	    <label>Password</label>
-			        	    <input name="smtp_pass" type="text"  data-maxlength="100" class="form-control" placeholder="Type here" data-toggle="tooltip" data-placement="top" title="Password" value="<?php echo $row->smtp_pass; ?>">
+			        	    <input name="smtp_pass" type="text"  data-maxlength="100" class="form-control" placeholder="Type here" data-toggle="tooltip" data-placement="top" title="Password" value="">
 			        	</div>
 		        	</div>
 

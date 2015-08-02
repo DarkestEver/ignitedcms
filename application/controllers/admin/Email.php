@@ -76,14 +76,19 @@ class Email extends CI_Controller {
 		$smtp_host  = $this->input->post('smtp_host');
 		$smtp_port  = $this->input->post('smtp_port');
 		$smtp_user  = $this->input->post('smtp_user');
-		$smtp_pass  = $this->input->post('smtp_pass');
+		$smtp_pass  = trim($this->input->post('smtp_pass'));
+
+		//encrypt $smtp_pass
+		//and save to database
+		$this->load->library('encryption');
+		$encrypted_password = $this->encryption->encrypt($smtp_pass);
 
 		$object = array(
 			'protocol' => $protocol, 
 			'smtp_host' => $smtp_host,
 			'smtp_port' => $smtp_port,
 			'smtp_user' => $smtp_user,
-			'smtp_pass' => $smtp_pass
+			'smtp_pass' => $encrypted_password
 
 			);
 		$this->db->where('id', '1');

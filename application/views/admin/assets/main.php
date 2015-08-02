@@ -90,7 +90,7 @@
                 	</div>
                 	<div class="clearfix"></div>
 
-                	<?php $atts= array( 'data-validate'=>'parsley'); echo form_open_multipart('admin/assets/do_upload',$atts); ?>
+                	<?php $atts = array( 'data-validate'=>'parsley'); echo form_open_multipart('admin/assets/do_upload',$atts); ?>
                 	
                 	<!-- do the upload -->
                 	<div class="form-group">

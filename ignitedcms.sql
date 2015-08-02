@@ -44,7 +44,7 @@ CREATE TABLE `email` (
   `smtp_host` varchar(50) NOT NULL,
   `smtp_port` varchar(50) NOT NULL,
   `smtp_user` varchar(50) NOT NULL,
-  `smtp_pass` varchar(50) NOT NULL
+  `smtp_pass` varchar(500) NOT NULL
 ) ENGINE=InnoDB AUTO_INCREMENT=2 DEFAULT CHARSET=latin1;
 
 

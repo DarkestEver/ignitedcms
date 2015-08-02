@@ -37,6 +37,12 @@ class Stuff_email extends CI_Model {
     		$smtp_pass = $row->smtp_pass;
       }
 
+      //Don't forget to decrypt password
+      $this->load->library('encryption');
+      $smtp_pass2 = $this->encryption->decrypt($smtp_pass);
+
+      //echo $smtp_pass2;
+
       if($protocol === "phpmail")
       {
           $config['protocol']  = 'mail';
@@ -83,7 +89,7 @@ class Stuff_email extends CI_Model {
           $config['smtp_host'] = $smtp_host;
           $config['smtp_port'] = $smtp_port;
           $config['smtp_user'] = $smtp_user;
-          $config['smtp_pass'] = $smtp_pass;
+          $config['smtp_pass'] = $smtp_pass2;
 
 
 
