@@ -21,7 +21,7 @@
 	                        </div>
 	                        <div class="line line-lg"></div>
 	                        <div class="text-muted"> <i class="fa fa-gear icon-muted"></i> <strong>Category</strong>
-	                            <?php echo $row->category; ?>
+	                            <?php //echo $row->category; ?>
 	                        </div>
 	                    </div>
 	                </div>

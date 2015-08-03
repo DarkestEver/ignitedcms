@@ -170,6 +170,10 @@ class Stuff_permissions extends CI_Model {
 		{
 			return "fa fa-shopping-cart big";
 		}
+		if($controller == "categories")
+		{
+			return "fa fa-tag big";
+		}
 	}
 
 }

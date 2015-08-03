@@ -29,7 +29,7 @@ class Product_admin extends CI_Controller {
 		
 		$this->db->select('*');
 		$this->db->from('products');
-		$this->db->order_by('category', 'asc');
+		
 		$query = $this->db->get();
 		
 		
@@ -63,12 +63,22 @@ class Product_admin extends CI_Controller {
 		
 		$this->db->select('*');
 		$this->db->from('products');
-		$this->db->order_by('category', 'asc');
+		
 		$query = $this->db->get();
 		
 		
 
 		$data['query'] = $query;
+
+		//get the product categories
+		//and dump to view
+
+		$this->db->select('*');
+		$this->db->from('cats');
+		$query2 = $this->db->get();
+		
+		$data['query2'] = $query2;
+
 
 		$this->load->view('admin/header');
 		$this->load->view('admin/body');
@@ -83,11 +93,18 @@ class Product_admin extends CI_Controller {
 		$this->db->select('*');
 		$this->db->from('products');
 		$this->db->where('id', $productid);
-		$this->db->order_by('category', 'asc');
+		
 		$this->db->limit(1);
 		$query = $this->db->get();
 		
+		//get the product categories
+		//and dump to view
+
+		$this->db->select('*');
+		$this->db->from('cats');
+		$query2 = $this->db->get();
 		
+		$data['query2'] = $query2;
 
 		$data['query'] = $query;
 		$data['id']    = $productid;

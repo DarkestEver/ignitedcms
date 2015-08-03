@@ -116,6 +116,23 @@
 
                               <?php } ?>
                             
+                              <!-- show all product categories -->
+                              <div class="form-group">
+                                  <label class="col-sm-2 control-label">Product Categories:</label> 
+                               <div class="col-sm-10"> 
+                                  <?php foreach ($query2->result() as $row): ?>
+
+                                  <label><input type="checkbox" name=" <?php echo $row->id; ?>" value="" /></label>
+                                  
+                                  <?php echo ($row->cat_name);
+                                      echo br();
+                                   ?>
+
+
+
+                                <?php endforeach; ?>
+                                </div>
+                              </div>
 
                             
                             <div class="form-group"> <div class="col-sm-4 col-sm-offset-2">  <button type="submit" id="create-topic"class="btn btn-purplet">

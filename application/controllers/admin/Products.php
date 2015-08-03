@@ -18,8 +18,7 @@ class Products extends CI_Controller {
 
 		$this->db->select('*');
 		$this->db->from('products');
-		$this->db->order_by('category', 'asc');
-
+		
 		$query = $this->db->get();
 		
 		$data['query'] = $query;
@@ -58,7 +57,7 @@ class Products extends CI_Controller {
 		$this->db->select('*');
 		$this->db->from('products');
 		$this->db->where('id', $id);
-		$this->db->order_by('category', 'asc');
+		
 		$this->db->limit(1);
 
 		$query = $this->db->get();

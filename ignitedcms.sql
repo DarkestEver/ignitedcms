@@ -146,13 +146,26 @@ CREATE TABLE `products` (
   `description` varchar(10000) NOT NULL,
   `spec` varchar(200) NOT NULL,
   `demo` varchar(200) NOT NULL,
-  `category` varchar(20) NOT NULL,
   `h` varchar(10) NOT NULL,
   `w` varchar(10) NOT NULL,
   `d` varchar(10) NOT NULL,
   `img` varchar(200) NOT NULL
 ) ENGINE=InnoDB AUTO_INCREMENT=2 DEFAULT CHARSET=latin1;
 
+
+CREATE TABLE `cats` (
+  `id` int(11) NOT NULL AUTO_INCREMENT,
+  `cat_name` varchar(100) NOT NULL,
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+
+CREATE TABLE `cat_links` (
+  `id` int(11) NOT NULL AUTO_INCREMENT,
+  `prod_id` int(11) NOT NULL,
+  `cat_id` int(11) NOT NULL,
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 -- --------------------------------------------------------
 
 --
@@ -198,6 +211,7 @@ CREATE TABLE `user` (
   `permissiongroup` int(11) NOT NULL,
   `fullname` varchar(200) NOT NULL
 ) ENGINE=MyISAM AUTO_INCREMENT=1 DEFAULT CHARSET=latin1;
+
 
 
 

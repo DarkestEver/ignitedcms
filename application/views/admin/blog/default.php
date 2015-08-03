@@ -83,7 +83,7 @@
   	           		<div class="btn  btn-white" data-toggle="popover" data-html="true" data-placement="top" data-content='
                      Are you sure? You can not can not get this back if you click yes ;)<br/><br/>
                      
-                    <button type="submit" class="btn btn-purplet btn-s-xs" name="sbm" value="delete" ><strong>Yes</strong></button>
+                    <button type="submit" class="btn btn-purplet btn-block" name="sbm" value="delete" ><strong>Yes</strong></button>
                     
 
                     ' title="" data-original-title='<button type="button" class="close pull-right" data-dismiss="popover">&times;</button>Warning!!!'>  
@@ -106,7 +106,7 @@
 		           	
 		           	<div class="col-sm-2">
 		           		<div class="input-group-btn">
-                            <button type="button" class="btn btn-white dropdown-toggle" data-toggle="dropdown"><i class="fa fa-sort-amount-desc"> <strong>Sort by Title</strong></i> <span class="caret"></span></button>
+                            <button type="button" class="btn btn-white dropdown-toggle" data-toggle="dropdown"><i class="fa fa-sort-amount-desc"> </i> <strong>Sort by Title</strong><span class="caret"></span></button>
                             <ul class="dropdown-menu pull-right">
                               <li><a href="#">Title</a></li>
                               <li><a href="#">URI</a></li>
