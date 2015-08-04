@@ -66,8 +66,6 @@ class Product_admin extends CI_Controller {
 		
 		$query = $this->db->get();
 		
-		
-
 		$data['query'] = $query;
 
 		//get the product categories
@@ -99,6 +97,7 @@ class Product_admin extends CI_Controller {
 		
 		//get the product categories
 		//and dump to view
+		
 
 		$this->db->select('*');
 		$this->db->from('cats');
@@ -109,11 +108,16 @@ class Product_admin extends CI_Controller {
 		$data['query'] = $query;
 		$data['id']    = $productid;
 
+
+		$this->load->model('Stuff_cats');
+		$sd = $this->Stuff_cats->get_cat_for_product($productid);
+
+		$data['sd'] = $sd;
+
 		$this->load->view('admin/header');
 		$this->load->view('admin/body');
 		$this->load->view('admin/product_admin/edit-product',$data); 
 		$this->load->view('admin/product_admin/footer-edit-product',$data);
-
 
 	}
 
@@ -139,9 +143,7 @@ class Product_admin extends CI_Controller {
 
 	public function upload_img($productid)
 	{
-		$config['upload_path'] = './img/uploads/';
-
-            
+		$config['upload_path'] = './img/uploads/'; 
         $config['allowed_types'] = 'gif|jpg|png';
         $config['encrypt_name'] = TRUE;
         // $config['max_size'] = '1048';
@@ -171,13 +173,12 @@ class Product_admin extends CI_Controller {
             $filename = $mytry['raw_name'].$mytry['file_ext'];
 
 
-			 	$img = $filename;
+		 	$img = $filename;
 
-				$data2 = array(
-	               
-	               'img' => $img
-	                
-	            );
+			$data2 = array(
+               'img' => $img          
+            );
+
 	        $this->db->where('id', $productid);
 	      	$this->db->update('products', $data2);
 
@@ -254,7 +255,6 @@ class Product_admin extends CI_Controller {
 	        $this->db->where('id', $productid);
 	      	$this->db->update('products', $data2);
 
-
 			$this->session->set_flashdata('type', '1');
 			$this->session->set_flashdata('msg', '<strong>Success</strong> Product spec has been added');
 
@@ -267,6 +267,31 @@ class Product_admin extends CI_Controller {
 	public function actual_edit_product($productid)
 	{
 
+		//delete all cat_links with this productid
+		$this->db->where('prod_id', $productid);
+		$this->db->delete('cat_links');
+
+
+		//loop through all the _POST values and save to database
+		//first check if it starts with cat-
+
+
+		$formValues = $this->input->post(NULL, TRUE);
+
+		foreach($formValues as $key => $value) 
+		{
+		    if(substr($key, 0,4)==="cat-")
+		    {
+		    	//split
+		    	$chunks = explode("-", $key);
+
+		    	//insert into database
+		    	$object = array('prod_id' => $productid , 'cat_id' => $chunks[1] );
+		    	$this->db->insert('cat_links', $object);
+		    }
+		}
+
+
 		$content2 = $this->input->post('dummy');
 	 	$name = $this->input->post('name');
 	 	$description = $content2;
@@ -276,12 +301,12 @@ class Product_admin extends CI_Controller {
 	 	$demo = $this->input->post('demo');
  	
 		$object = array(
-           'name' => $name,
+           'name'        => $name,
            'description' => $description,
-           'h'    => $h,
-           'w'=> $w,
-           'd'=> $d,
-           'demo'=> $demo
+           'h'           => $h,
+           'w'           => $w,
+           'd'           => $d,
+           'demo'        => $demo
            
             
         );
@@ -313,8 +338,6 @@ class Product_admin extends CI_Controller {
            'w'=> $w,
            'd'=> $d,
            'demo'=> $demo
-           
-            
         );
 	      	$this->db->insert('products', $object);
 

@@ -120,17 +120,15 @@
                               <div class="form-group">
                                   <label class="col-sm-2 control-label">Product Categories:</label> 
                                <div class="col-sm-10"> 
-                                  <?php foreach ($query2->result() as $row): ?>
+                         
+                                   <?php foreach ($sd as $key => $value): ?>
+                                      <label><input type="checkbox" name="cat-<?php echo $value['id']; ?>"  <?php echo $value['checked']; ?>/></label>
+                                       
+                                       <?php echo $value['cat_name']; ?>
+                                       
+                                   <?php endforeach; ?>
 
-                                  <label><input type="checkbox" name=" <?php echo $row->id; ?>" value="" /></label>
-                                  
-                                  <?php echo ($row->cat_name);
-                                      echo br();
-                                   ?>
 
-
-
-                                <?php endforeach; ?>
                                 </div>
                               </div>
 

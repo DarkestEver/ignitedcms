@@ -54,7 +54,7 @@
                                     <a class="btn btn-white btn-sm btn-info" data-edit="bold" title="" data-original-title="Bold (Ctrl/Cmd+B)"><i class="fa fa-bold"></i></a>  
                                     <a class="btn btn-white btn-sm" data-edit="italic" title="" data-original-title="Italic (Ctrl/Cmd+I)"><i class="fa fa-italic"></i></a> 
                                       <a class="btn btn-white btn-sm" data-edit="strikethrough" title="" data-original-title="Strikethrough"><i class="fa fa-strikethrough"></i></a>
-                                           <a class="btn btn-white btn-sm" data-edit="underline" title="" data-original-title="Underline (Ctrl/Cmd+U)"><i class="fa fa-underline"></i></a> 
+                                        <a class="btn btn-white btn-sm" data-edit="underline" title="" data-original-title="Underline (Ctrl/Cmd+U)"><i class="fa fa-underline"></i></a> 
                                   </div>
                                   <div class="btn-group"> <a class="btn btn-white btn-sm" data-edit="insertunorderedlist" title="" data-original-title="Bullet list"><i class="fa fa-list-ul"></i></a> 
                                    <a class="btn btn-white btn-sm" data-edit="insertorderedlist" title="" data-original-title="Number list"><i class="fa fa-list-ol"></i></a> 
@@ -117,22 +117,23 @@
                                <div class="col-sm-10"> 
                                   <?php foreach ($query2->result() as $row): ?>
 
-                                  <label><input type="checkbox" name=" <?php echo $row->id; ?>" value="" /></label>
+                                  <label>
+                                    <input type="checkbox" name="<?php echo $row->id; ?>" value="" />
+                                  </label>
                                   
                                   <?php echo ($row->cat_name);
                                       echo br();
                                    ?>
 
-
-
-                                <?php endforeach; ?>
+                                  <?php endforeach; ?>
                                 </div>
                               </div>
-                                                       
-
-                            
-                            <div class="form-group"> <div class="col-sm-4 col-sm-offset-2">  <button type="submit" id="create-topic"class="btn btn-purplet">
-                              <strong>Add</strong></button> </div> </div>
+                           
+                            <div class="form-group"> 
+                              <div class="col-sm-4 col-sm-offset-2">  <button type="submit" id="create-topic"class="btn btn-purplet">
+                                <strong>Add</strong></button> 
+                              </div> 
+                            </div>
 
                           </div>
                       </form>
