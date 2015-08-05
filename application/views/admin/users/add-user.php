@@ -33,6 +33,7 @@
           </div>
       </div> 
       <!-- end breadcrumb -->
+      <?php echo validation_errors(); ?>
 
       <div class="row" style="margin-left:30px; margin-right:30px;">
       	<div class="col-sm-12">
@@ -43,7 +44,7 @@
       	        <div class="panel-body">
       	        	<div class="form-group">
       	        	    <label>Username*</label>
-      	        	    <input name="name" type="text" data-required="true" data-maxlength="100" class="form-control" placeholder="Type here" data-toggle="tooltip" data-placement="top" title="Username" value="">
+      	        	    <input name="name" type="text" data-required="true" data-maxlength="100" class="form-control" placeholder="Type here" data-toggle="tooltip" data-placement="top" title="Username" value="<?php echo set_value('name'); ?>">
       	        	</div>
       	        	<div class="form-group">
       	        	    <label>Email*</label>

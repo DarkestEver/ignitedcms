@@ -244,13 +244,39 @@ class Users extends CI_Controller {
 		}
 	}
 
+
+	 /**
+	  *  @Description: test the form validation with re-populate
+	  *       @Params: params
+	  *
+	  *  	 @returns: returns
+	  */
+	public function save_user()
+	{
+		$this->form_validation->set_rules('name', 'name', 'alpha');
+        
+
+        if ($this->form_validation->run() == FALSE)
+        {
+                //redirect("admin/users/add_user_view","refresh");
+                $this->load->view('admin/users/add-user');
+        }
+        else
+        {
+                redirect("admin/users","refresh");
+        }
+	}
+
+
+
+
 	 /**
 	  *  @Description: Save user, make sure duplicate username and email is not used!
 	  *       @Params: _POST 
 	  *
 	  *  	 @returns: returns
 	  */
-	public function save_user()
+	public function _deprecated_save_user()
 	{
 		$name     = $this->input->post('name');
 		$email    = $this->input->post('email');
