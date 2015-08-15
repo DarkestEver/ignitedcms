@@ -44,7 +44,7 @@ class Assets extends CI_Controller {
 
 		$this->load->view('admin/header');
 		$this->load->view('admin/body');
-		$this->load->view('admin/assets/main',$data);
+		$this->load->view('admin/assets/default',$data);
 		$this->load->view('admin/footer');
 
 	}
@@ -116,6 +116,55 @@ class Assets extends CI_Controller {
 			redirect('admin/assets','refresh');
 		}
 
+	}
+
+	public function search_assets_or_delete()
+	{
+		//check if search or delete
+		if($this->input->post('sbm') == "search") 
+		{
+
+			$search_term = $this->input->post('search_term');
+
+			$this->db->select('*');
+			$this->db->from('assets');
+			$this->db->like('name', $search_term);
+
+			$query = $this->db->get();
+			
+
+			$data['query'] = $query;
+			
+
+
+			$this->load->view('admin/header');
+			$this->load->view('admin/body');
+			$this->load->view('admin/assets/default',$data);
+			$this->load->view('admin/footer');
+		}
+
+		if($this->input->post('sbm') == "delete") 
+		{
+			//iterate over selected items and delete
+			if (isset($_POST['chosen']))
+			{
+				$arrayName = $_POST['chosen'];
+
+				foreach ($arrayName as $key => $value) {
+					//echo $value;
+
+					//delete the pages in the db
+					$this->db->where('id', $value);
+					$this->db->delete('assets');
+
+				}
+				
+			}
+			
+			//return to page view
+			redirect("admin/assets","refresh");
+		
+		}
 	}
 
 
