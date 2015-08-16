@@ -74,6 +74,65 @@
 
 
     </div>
+
+    <!-- rich text box -->
+    <div class="row" style="margin-left:30px; margin-right:30px; display:none;" id="my-rich-text">
+        <div class="col-sm-12">
+
+            <header class="panel-heading ">
+                <div class="inline font-bold">Rich text</div>
+                <div class="close btn" id="rich-close">&times;</div>
+            </header>
+            
+            <section class="panel">
+                
+                <div class="panel-body">
+                  <div class="form-group"> 
+                             
+                               <div class="btn-toolbar m-b-sm btn-editor" data-role="editor-toolbar" data-target="#editor">  
+                                
+                                
+                                  <div class="btn-group"> 
+                                    <a class="btn btn-white btn-sm btn-info" data-edit="bold" title="" data-original-title="Bold (Ctrl/Cmd+B)"><i class="fa fa-bold"></i></a>  
+                                    <a class="btn btn-white btn-sm" data-edit="italic" title="" data-original-title="Italic (Ctrl/Cmd+I)"><i class="fa fa-italic"></i></a> 
+                                      <a class="btn btn-white btn-sm" data-edit="strikethrough" title="" data-original-title="Strikethrough"><i class="fa fa-strikethrough"></i></a>
+                                           <a class="btn btn-white btn-sm" data-edit="underline" title="" data-original-title="Underline (Ctrl/Cmd+U)"><i class="fa fa-underline"></i></a> 
+                                  </div>
+                                  <div class="btn-group"> <a class="btn btn-white btn-sm" data-edit="insertunorderedlist" title="" data-original-title="Bullet list"><i class="fa fa-list-ul"></i></a> 
+                                   <a class="btn btn-white btn-sm" data-edit="insertorderedlist" title="" data-original-title="Number list"><i class="fa fa-list-ol"></i></a> 
+                                      </div>
+                                  <div class="btn-group"> <a class="btn btn-white btn-sm btn-info" data-edit="justifyleft" title="" data-original-title="Align Left (Ctrl/Cmd+L)"><i class="fa fa-align-left"></i></a> 
+                                      <a class="btn btn-white btn-sm" data-edit="justifycenter" title="" data-original-title="Center (Ctrl/Cmd+E)"><i class="fa fa-align-center"></i>
+                                      </a> <a class="btn btn-white btn-sm" data-edit="justifyright" title="" data-original-title="Align Right (Ctrl/Cmd+R)"><i class="fa fa-align-right"></i></a> 
+                                      <a class="btn btn-white btn-sm" data-edit="justifyfull" title="" data-original-title="Justify (Ctrl/Cmd+J)"><i class="fa fa-align-justify"></i>
+                                      </a>
+                                  </div>
+                                  <div class="btn-group"> <a class="btn btn-white btn-sm dropdown-toggle" data-toggle="dropdown" title="" data-original-title="Hyperlink"><i class="fa fa-link"></i></a> 
+                                      <div class="dropdown-menu">
+                                          <div class="input-group m-l-xs m-r-xs">
+                                              <input class="form-control input-sm" placeholder="URL" type="text" data-edit="createLink">
+                                              <div class="input-group-btn">
+                                                  <button class="btn btn-white btn-sm" type="button">Add</button>
+                                              </div>
+                                          </div>
+                                      </div> <a class="btn btn-white btn-sm" data-edit="unlink" title="" data-original-title="Remove Hyperlink"><i class="fa fa-cut"></i></a> 
+                                  </div>
+                                  <div class="btn-group"> <a class="btn btn-white btn-sm" data-edit="undo" title="" data-original-title="Undo (Ctrl/Cmd+Z)"><i class="fa fa-undo"></i></a>  <a class="btn btn-white btn-sm" data-edit="redo" title="" data-original-title="Redo (Ctrl/Cmd+Y)"><i class="fa fa-repeat"></i></a> 
+                                  </div>
+                                  </div>
+                                  <div id="editor" class="form-control" style="overflow:scroll;height:250px;max-height:250px" contenteditable="true"> <?php //echo $content; ?> </div>
+                                
+                              </div> 
+
+                              <div id="add-rich">Add</div>
+                </div>
+            </section>
+        </div>
+        
+                  
+    </div>
+
+
     <!-- end page options -->
 
     <div class="row" style="margin-left:30px; margin-right:30px; display:none;" id="assets" >
@@ -157,6 +216,7 @@
     <div class="col-sm-12">
          <div class="btn-group">
             <button type="submit" class="btn btn-white btn-s-xs " id="add-block">Add Block</button>
+            <button type="submit" class="btn btn-white btn-s-xs " id="rrr">Add Rich Text</button>
        
             <button type="submit" class="btn btn-white btn-s-xs " id="add-image">Add Image</button>
 
