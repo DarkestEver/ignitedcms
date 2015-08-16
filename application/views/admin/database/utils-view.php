@@ -67,7 +67,8 @@
  	               	 <?php $atts= array( 'data-validate'=>'parsley'); echo form_open_multipart('admin/database/replace_urls',$atts); ?>
  	               	 
  	               	 <div class="form-group">
- 	               	     <label>Replacement url: (*Please make sure to have a trailing forward slash on your url)</label>
+ 	               	     <label>Replacement url: </label>
+ 	               	     <div class="igs-small">(*Please make sure to have a trailing forward slash on your url)</div>
  	               	     <input name="replace" type="text" data-required="true" data-maxlength="200" class="form-control" placeholder="Type here" data-toggle="tooltip" data-placement="top" title="url" value="http://www.yourdomain.com/ignitedcms/">
  	               	 </div>
 
