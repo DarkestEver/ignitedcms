@@ -549,7 +549,7 @@ a:hover .caret-white {
   .vbox > section,
   .vbox > footer {
     position: absolute;
-    top: 81px;
+    top: 130px;
     bottom: 0;
     width: 100%;
   }

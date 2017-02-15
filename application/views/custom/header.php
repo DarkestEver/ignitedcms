@@ -102,6 +102,7 @@
   -webkit-box-shadow: none;
   -moz-box-shadow: none;
   box-shadow: none;
+  margin-top: 10px;
 
 }
 
@@ -130,8 +131,8 @@
 }
 
 .sm-simple a:hover, .sm-simple a:focus, .sm-simple a:active, .sm-simple a.highlighted {
-    background: <?php echo my_theme_color(); ?>;
-    color: #fff;
+    background: #ffffff;
+    color: <?php echo my_theme_color(); ?>;
 }
 
 .sm-simple > li {
