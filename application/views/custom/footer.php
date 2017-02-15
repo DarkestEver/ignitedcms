@@ -28,16 +28,47 @@
   <script src="<?php echo(base_url()."resources") ?>/js/superfish/hoverIntent.js"></script>
   <script src="<?php echo(base_url()."resources") ?>/js/superfish/superfish.js"></script>
 
+  <!-- smart menus -->
+   <script src="<?php echo(base_url()."resources") ?>/js/jquery.smartmenus.js"></script>
+
   
 
  <script type="text/javascript">
    
     $(document).ready(function (event) {
 
+      // SmartMenus init
+$(function() {
+  $('#main-menu').smartmenus({
+    mainMenuSubOffsetX: -1,
+    subMenusSubOffsetX: 10,
+    subMenusSubOffsetY: 0
+  });
+});
 
-         $('.menu').superfish({
-       
-        });
+// SmartMenus mobile menu toggle button
+$(function() {
+  var $mainMenuState = $('#main-menu-state');
+  if ($mainMenuState.length) {
+    // animate mobile menu
+    $mainMenuState.change(function(e) {
+      var $menu = $('#main-menu');
+      if (this.checked) {
+        $menu.hide().slideDown(250, function() { $menu.css('display', ''); });
+      } else {
+        $menu.show().slideUp(250, function() { $menu.css('display', ''); });
+      }
+    });
+    // hide mobile menu beforeunload
+    $(window).bind('beforeunload unload', function() {
+      if ($mainMenuState[0].checked) {
+        $mainMenuState[0].click();
+      }
+    });
+  }
+});
+
+         
         
     });
 </script>

@@ -285,10 +285,10 @@ class Stuff_menu extends CI_Model {
         
         //to remove the menu bug
 		//remove first <ul> and replace with <ul class="sf-menu">
-		$brap =  preg_replace('/<ul>/', '<ul class="sf-menu">', $brap, 1);
+		$brap =  preg_replace('/<ul>/', '<ul id="main-menu" class="sm sm-simple">', $brap, 1);
 
 
-        $menu4 = $menu2 . $brap . $menu3;
+        $menu4 =  $brap ;
 
         return $menu4;
 

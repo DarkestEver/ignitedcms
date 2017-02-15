@@ -4,36 +4,38 @@
   <section class="vbox">
    
 
-  <div class="head-outer">
-      
-        <?php $logo = my_show_logo(); ?>
-        <a href="#"><img src="<?php echo base_url("img/uploads/$logo"); ?>" class="img-responsive my-center visible-xs" style="position:relative; margin-top:0px;"></a>
+   <div class="pmf-container" style="margin-left:auto; margin-right:auto; margin-top:30px; max-width:1170px;  ">
+    <div class="row" style="margin-left:30px; margin-right:30px; max-width:1120px;">
+       <div class="col-sm-12">
+          <nav class="main-nav" role="navigation">
 
-        <div class="head" id="tidy">
-        <div class="logo visible-lg visible-md">
+          <!-- Mobile menu toggle button (hamburger/x icon) -->
+          <input id="main-menu-state" type="checkbox" />
+          <label class="main-menu-btn" for="main-menu-state">
+            <span class="main-menu-btn-icon"></span> Toggle main menu visibility
+          </label>
 
-          <a href="#"><img src="<?php echo base_url("img/uploads/$logo"); ?>" class="img-responsive my-center" style="position:relative; "></a>
-        </div>
+          <h2 class="nav-brand">
+            <a href="#">
+              <?php $logo = my_show_logo(); ?>
+             <img class="img-responsive" src="<?php echo base_url("img/uploads/$logo"); ?>" alt="image"  />
+            </a>
+          </h2>
 
-      
-
-        
-          <nav>
-          <?php echo $menu; ?>
-
-          <div class="clear-fix"></div>
-
-          <div class="small-menu" style="float:right; position:relative;">
-            <select onchange="location = this.options[this.selectedIndex].value;">
-                <option selected="selected" value="">Go to...</option>
-                <?php echo $small_menu; ?>
-            </select>
-          </div>
+          <!-- Sample menu definition -->
+           <?php echo $menu; ?>
         </nav>
+       </div>
+       
+   </div>
 
-          </div>
-      </div> <!-- end class head-->
-  </div> <!-- end head-outer -->
+
+
+   </div>
+   
+
+
+
 
     
   <!-- Actual content goes here took out wrapper -->
