@@ -153,24 +153,48 @@ class Pages extends CI_Controller {
 		$this->session->set_flashdata('type', '1');
 		$this->session->set_flashdata('msg', '<strong>Success</strong> Page added!');
 
-		$name = $this->input->post('name');
 
-		$object = array('name' => $name );
-		$this->db->insert('pages', $object);
-
-		$id = $this->db->insert_id();
-
-
-		//add the route
-
-		$tmp_controller = "site_preview/preview_page/$id";
-
-		$object2 = array('route' => $name, 'controller' => $tmp_controller );
-		$this->db->insert('routes', $object2);
+		$this->form_validation->set_rules('name', 'name', 'required|is_unique[pages.name]|alpha_numeric_spaces');
+		if ($this->form_validation->run() == FALSE)
+		{
+			$this->load->view('admin/header');
+			$this->load->view('admin/body');
+			$this->load->view('admin/pages/page');
+			$this->load->view('admin/footer');
+		}
+		else
+		{
+			$name = $this->input->post('name');
 
 
+			//convert space to dash
+			$url = str_replace(" ", "-", $name);
 
-		redirect('admin/pages','refresh');
+
+			$object = array('name' => $name, 'path' => $url );
+			$this->db->insert('pages', $object);
+
+			$id = $this->db->insert_id();
+
+
+			//add the route
+
+			$tmp_controller = "site_preview/preview_page/$id";
+
+			$object2 = array('route' => $url, 'controller' => $tmp_controller );
+			$this->db->insert('routes', $object2);
+
+
+
+			redirect('admin/pages','refresh');
+		}
+
+
+
+
+
+
+		
 
 	}
 
@@ -287,10 +311,14 @@ class Pages extends CI_Controller {
 
 				foreach ($arrayName as $key => $value) {
 					//echo $value;
+					//delete route first
+					$this->delete_route($value);
 
 					//delete the pages in the db
 					$this->db->where('id', $value);
 					$this->db->delete('pages');
+
+					
 
 				}
 				
@@ -301,6 +329,34 @@ class Pages extends CI_Controller {
 		
 		}
 	}
+
+
+
+	//also delete the route when deleting page
+	public function delete_route($id)
+	{
+
+		$this->db->select('path');
+		$this->db->from('pages');
+		$this->db->where('id', $id);
+		$this->db->limit(1);
+
+		$query = $this->db->get();
+		
+		$path = "";
+		foreach ($query->result() as $row) 
+		{
+			$path = $row->path;
+		}
+
+		$this->db->where('route', $path);
+		$this->db->delete('routes');
+		
+		
+
+	}
+
+
 
 }
 

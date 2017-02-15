@@ -23,8 +23,10 @@
 		        	
 		        	<div class="form-group">
 		        	    <label>Page Name</label>
-		        	    <input name="name" type="text" data-required="true" data-maxlength="20" class="form-control" placeholder="Type here" data-toggle="tooltip" data-placement="top" title="Page name" value="">
+		        	    <input name="name" type="text" data-required="true" data-maxlength="20" class="form-control" placeholder="Type here" data-toggle="tooltip" data-placement="top" title="Page name" value="<?php echo set_value('name'); ?>">
 		        	</div>
+
+		        	<div class="igs-small"><?php echo form_error('name'); ?></div>
 		        	<button type="submit" class="btn btn-purplet btn-s-xs " id=""><strong>Save</strong></button>
 		        	
 

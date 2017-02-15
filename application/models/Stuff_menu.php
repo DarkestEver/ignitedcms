@@ -414,7 +414,8 @@ class Stuff_menu extends CI_Model {
 
   	 	if($controller == 0)
   	 	{
-  	 		return "site_preview/preview_page/$pageid";
+  	 		
+  	 		return ($url);
   	 	}
   	 	else{
   	 		return "$url";
