@@ -31,6 +31,19 @@ CREATE TABLE `blog` (
   `picture` varchar(500) NOT NULL
 ) ENGINE=InnoDB AUTO_INCREMENT=5 DEFAULT CHARSET=latin1;
 
+#
+# TABLE STRUCTURE FOR: IGS_routes
+#
+
+DROP TABLE IF EXISTS `routes`;
+
+CREATE TABLE `routes` (
+  `id` int(11) NOT NULL AUTO_INCREMENT,
+  `route` varchar(200) NOT NULL,
+  `controller` varchar(200) NOT NULL,
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB AUTO_INCREMENT=1 DEFAULT CHARSET=latin1;
+
 
 -- --------------------------------------------------------
 

@@ -158,6 +158,18 @@ class Pages extends CI_Controller {
 		$object = array('name' => $name );
 		$this->db->insert('pages', $object);
 
+		$id = $this->db->insert_id();
+
+
+		//add the route
+
+		$tmp_controller = "site_preview/preview_page/$id";
+
+		$object2 = array('route' => $name, 'controller' => $tmp_controller );
+		$this->db->insert('routes', $object2);
+
+
+
 		redirect('admin/pages','refresh');
 
 	}

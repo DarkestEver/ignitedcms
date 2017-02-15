@@ -93,7 +93,7 @@ class Installer extends CI_Controller {
 		$database = $this->input->post('database');
 		$prefix   = $this->input->post('prefix');
 
-		$this->form_validation->set_rules('database', 'Database', 'trim|required|alpha');
+		$this->form_validation->set_rules('database', 'Database', 'trim|required|alpha_dash');
 		
 
 		if ($this->form_validation->run() == FALSE)
@@ -286,6 +286,33 @@ class Installer extends CI_Controller {
 	   */
 	  public function save_time_local()
 	  {
+
+			//write over the routes file
+	  		$route_content = file_get_contents(APPPATH ."config/routes.php");
+
+	  	    $string = 
+"require_once( BASEPATH .'database/DB'. '.php' );
+\$db =& DB();
+
+\$db->select('*');
+\$db->from('routes');
+\$query = \$db->get();
+
+if(\$query->num_rows() > 0)
+{
+	//if db entries then loop through and generate routes
+	foreach (\$query->result() as \$row) 
+	{
+		\$route[\$row->route] = \$row->controller;
+	}
+}";
+			$route_content = $route_content . "\n" . $string;
+			write_file(APPPATH ."config/routes.php",$route_content);
+
+
+
+
+
 
 			//To do: write over config file
 
