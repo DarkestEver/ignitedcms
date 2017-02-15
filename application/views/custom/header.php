@@ -64,11 +64,11 @@
 
 /*new menu test styles*/
 .main-nav {
-  border: 1px solid #bbb;
+  /*border: 1px solid #bbb;*/
   background: #fff;
-  -webkit-box-shadow: 0 1px 1px rgba(0, 0, 0, 0.2);
+ /* -webkit-box-shadow: 0 1px 1px rgba(0, 0, 0, 0.2);
   -moz-box-shadow: 0 1px 41px rgba(0, 0, 0, 0.2);
-  box-shadow: 0 1px 1px rgba(0, 0, 0, 0.2);
+  box-shadow: 0 1px 1px rgba(0, 0, 0, 0.2);*/
 }
 
 .main-nav:after {
@@ -102,6 +102,7 @@
   -webkit-box-shadow: none;
   -moz-box-shadow: none;
   box-shadow: none;
+  
 }
 
 @media (min-width: 768px) {
@@ -128,8 +129,17 @@
   -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
 }
 
+.sm-simple a:hover, .sm-simple a:focus, .sm-simple a:active, .sm-simple a.highlighted {
+    background: <?php echo my_theme_color(); ?>;
+    color: #fff;
+}
 
-/* hamburger icon */
+.sm-simple > li {
+    border-top: 0;
+     border-left: 1px solid #ffffff; 
+}
+
+
 
 .main-menu-btn-icon,
 .main-menu-btn-icon:before,
@@ -262,7 +272,7 @@
             margin-top: 50px;
         }
         body {
-            background-color: #f2f2f2;
+            background-color: #ffffff;
             font-family: '<?php echo my_body_font(); ?>', sans-serif;
             font-size: 16px;
             line-height: 24px;
@@ -377,7 +387,7 @@
             margin-top: 5px;
         }
         .tab-content {
-            background-color: #f2f2f2;
+            background-color: #ffffff;
         }
 
         .panel-heading .nav {
