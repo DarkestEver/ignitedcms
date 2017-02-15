@@ -112,7 +112,7 @@ class Shortcodes extends CI_Controller {
 	public function slider()
 	{
 		$url = base_url("img/uploads/ig2.png");
-		$cont = '<section class="panel"> 
+		$cont = '<section class="panel-x"> 
            <div class="carousel slide auto panel-body" id="c-slide" style="min-height:80px;">
             <ol class="carousel-indicators out">
               <li data-target="#c-slide" data-slide-to="0" class=""></li>
@@ -120,12 +120,12 @@ class Shortcodes extends CI_Controller {
             
             </ol>
             <div class="carousel-inner">
-              <div class="item active left">
+              <div class="item active ">
                 
                   <img src="'.$url.'" class="img-responsive my-center" style="position:relative;">
                 
               </div>
-              <div class="item next left">
+              <div class="item ">
                  
                  <img src="'.$url.'" class="img-responsive my-center" style="position:relative;">
                 

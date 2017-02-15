@@ -102,7 +102,7 @@
   -webkit-box-shadow: none;
   -moz-box-shadow: none;
   box-shadow: none;
-  
+
 }
 
 @media (min-width: 768px) {
@@ -257,6 +257,15 @@
           margin: 1px;
         }
 
+        .carousel-indicators.out {
+        bottom: -50px;
+        }
+
+        .carousel-control {
+
+            font-size: 60px;
+        }
+
     
 
 
@@ -287,6 +296,7 @@
             
             position: relative;
             bottom: 0px;
+            width: 100%;
             min-height: 300px;
             background-color: <?php echo my_footer_color(); ?>;
         }
@@ -498,22 +508,7 @@
             display:none;
         }
 
-        nav select 
-        {
-          float:left;
-          position:relative;
-          display: none;
-          max-width: 180px;
-          /*top:50px;*/
-          right:130px;
-          
-        }
-
-        @media (max-width: 960px) 
-        {
-          nav ul     { display: none; }
-          nav select { display: inline-block; }
-        }
+        
         
     </style>
 </head>
