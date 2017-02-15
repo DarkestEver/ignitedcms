@@ -89,7 +89,7 @@ class Site_settings extends CI_Controller {
             $footer2 = $this->input->post('footer2');
             $footer3 = $this->input->post('footer3');
             $footercolor = $this->input->post('footercolor');
-            $footerfontcolor = $this->input->post('footerfontcolor');
+            $css = $this->input->post('css');
 
 
            
@@ -102,7 +102,8 @@ class Site_settings extends CI_Controller {
             	'footer2' => $footer2,
             	'footer3' => $footer3,
             	'footercolor' => $footercolor,
-            	'footerfontcolor' => $footerfontcolor  
+            	'footerfontcolor' => $footerfontcolor,
+            	'css' => $css  
             	);
 
 
@@ -127,6 +128,7 @@ class Site_settings extends CI_Controller {
             $footer3 = $this->input->post('footer3');
             $footercolor = $this->input->post('footercolor');
             $footerfontcolor = $this->input->post('footerfontcolor');
+            $css = $this->input->post('css');
 
             
 
@@ -139,7 +141,8 @@ class Site_settings extends CI_Controller {
             	'footer2' => $footer2,
             	'footer3' => $footer3,
             	'footercolor' => $footercolor,
-            	'footerfontcolor' => $footerfontcolor      
+            	'footerfontcolor' => $footerfontcolor,
+            	'css' => $css      
             	);
 
 

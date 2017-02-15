@@ -136,6 +136,39 @@ if ( ! function_exists('my_render_dashboard'))
   */
 
 
+if ( ! function_exists('my_css'))
+{
+    function my_css()
+    {
+      $CI =& get_instance();
+      $CI->db->select('css');
+      $CI->db->from('site');
+      $CI->db->where('id', '1');
+      $CI->db->limit(1);
+
+      $query = $CI->db->get();
+      $css = "";
+      foreach ($query->result() as $row) 
+      {
+        $css = $row->css;
+      }
+      return $css;
+
+    }   
+}
+
+
+
+
+
+/**
+  *  @Description: get theme color
+  *       @Params: none
+  *
+  *     @returns: hex val of color
+  */
+
+
 if ( ! function_exists('my_theme_color'))
 {
     function my_theme_color()

@@ -88,6 +88,12 @@
 	        	    <textarea name="footer3"  id="inp-box" class="form-control" rows="5" data-maxlength="1000"  placeholder="Type here" data-toggle="tooltip" data-placement="top" title="Footer 1"><?php echo $row->footer3; ?></textarea>
 	        	
 	        	</div>
+	        	<div class="form-group">
+	        	    <label>Css</label>
+	        	    <div class="igs-small">Custom Css that will be embedded in your header file</div>
+	        	    <textarea name="css"  id="inp-box" class="form-control" rows="5"  placeholder="Type here" data-toggle="tooltip" data-placement="top"><?php echo $row->css; ?></textarea>
+	        	
+	        	</div>
 	        	
 	        	
 	        	

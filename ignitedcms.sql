@@ -182,7 +182,8 @@ CREATE TABLE `site` (
   `footerfontcolor` varchar(50) NOT NULL,
   `footer1` varchar(5000) NOT NULL,
   `footer2` varchar(5000) NOT NULL,
-  `footer3` varchar(5000) NOT NULL
+  `footer3` varchar(5000) NOT NULL,
+  `css` text NOT NULL,
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 
