@@ -337,7 +337,7 @@ class Stuff_menu extends CI_Model {
 	       }
 	   }
 	     //avoid empty leafs
-  		 return ($r==''?'':"<ul>". $r . "</ul>");
+  		 return ($r==''?'':"<ul>". ucfirst($r) . "</ul>");
   	}
 
   	 /**
@@ -359,7 +359,8 @@ class Stuff_menu extends CI_Model {
   	 	$t_url = $this->get_url($id);
   	 	$tmp_url = site_url($t_url);
 
-  	 	return "<a href='$tmp_url'> $array[0]</a>";
+  	 	$nam = ucfirst(trim($array[0]));
+  	 	return "<a href='$tmp_url'>$nam</a>";
 
   	 }
 
