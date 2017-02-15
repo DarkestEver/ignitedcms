@@ -259,7 +259,7 @@
         }
 
         .carousel-indicators.out {
-        bottom: -50px;
+        bottom: -20px;
         }
 
         .carousel-control {
@@ -284,9 +284,10 @@
         body {
             background-color: #ffffff;
             font-family: '<?php echo my_body_font(); ?>', sans-serif;
-            font-size: 16px;
-            line-height: 24px;
-            color: #333;
+            font-size: 21px;
+            line-height: 1.5em;
+            color: #888;
+            font-weight: 200;
             -webkit-font-smoothing: antialiased;
             /* Fix for webkit rendering */
         }
@@ -300,6 +301,7 @@
             width: 100%;
             min-height: 300px;
             background-color: <?php echo my_footer_color(); ?>;
+
         }
         .footer-brand {
             color: <?php echo my_footer_font_color(); ?>;
