@@ -99,7 +99,7 @@ class Shortcodes extends CI_Controller {
 	public function code()
 	{
 		include('./resources/shortcodes/my_codes.php');
-		echo do_shortcode("[col foo=4][code]".'sss'."[/code][/col]");
+		echo do_shortcode("[col foo=4][code]".'Code goes here'."[/code][/col]");
 
 	}
 
@@ -120,12 +120,12 @@ class Shortcodes extends CI_Controller {
             
             </ol>
             <div class="carousel-inner">
-              <div class="item active ">
+              <div class="item active">
                 
                   <img src="'.$url.'" class="img-responsive my-center" style="position:relative;">
                 
               </div>
-              <div class="item ">
+              <div class="item">
                  
                  <img src="'.$url.'" class="img-responsive my-center" style="position:relative;">
                 
