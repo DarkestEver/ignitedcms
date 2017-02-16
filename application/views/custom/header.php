@@ -423,27 +423,29 @@
         }
         
         a {
-            color: <?php echo my_theme_color(); ?>;;
+            color: <?php echo my_theme_color(); ?>;
             /*text-decoration: underline;*/
         }
         /*for the login button on menu*/
-        a.stop:hover {
-            background-color: <?php echo my_theme_color(); ?>;;
+        a:hover {
+            color: <?php echo my_theme_color(); ?>;
+            text-decoration: underline;
+            font-weight: 200;
         }
 
        
 
         .purplet {
             /*color: #bc8dbe; */
-            color: <?php echo my_theme_color(); ?>;;
+            color: <?php echo my_theme_color(); ?>;
         }
         .bg-purplet {
-            background-color: <?php echo my_theme_color(); ?>;;
+            background-color: <?php echo my_theme_color(); ?>;
         }
         .btn-purplet {
             color: #fff !important;
-            background-color: <?php echo my_theme_color(); ?>;;
-            border-color: <?php echo my_theme_color(); ?>;;
+            background-color: <?php echo my_theme_color(); ?>;
+            border-color: <?php echo my_theme_color(); ?>;
         }
 
         .btn-black{
