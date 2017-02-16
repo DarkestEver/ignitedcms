@@ -24,10 +24,6 @@
 
 
 
-<!-- superfish menu -->
-  <script src="<?php echo(base_url()."resources") ?>/js/superfish/hoverIntent.js"></script>
-  <script src="<?php echo(base_url()."resources") ?>/js/superfish/superfish.js"></script>
-
   <!-- smart menus -->
    <script src="<?php echo(base_url()."resources") ?>/js/jquery.smartmenus.js"></script>
 

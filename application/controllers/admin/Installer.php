@@ -221,7 +221,6 @@ class Installer extends CI_Controller {
 		(8,'site_settings',2),
 		(9,'users',9),
 		(10,'database',10),
-		(11,'product_admin',11),
 		(12,'categories',12);";
 
 		$sql5 = "
@@ -236,7 +235,6 @@ class Installer extends CI_Controller {
 		(1,8),
 		(1,9),
 		(1,10),
-		(1,11),
 		(1,12);";
 
 		$sql6 = "
