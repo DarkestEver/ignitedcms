@@ -220,8 +220,7 @@ class Installer extends CI_Controller {
 		(7,'assets',7),
 		(8,'site_settings',2),
 		(9,'users',9),
-		(10,'database',10),
-		(12,'categories',12);";
+		(10,'database',10);";
 
 		$sql5 = "
 		INSERT INTO `".$prefix."permission_map`(`groupID`, `permissionID`) VALUES 
@@ -234,8 +233,7 @@ class Installer extends CI_Controller {
 		(1,7),
 		(1,8),
 		(1,9),
-		(1,10),
-		(1,12);";
+		(1,10);";
 
 		$sql6 = "
 		INSERT INTO `".$prefix."permission_groups`(`groupID`, `groupName`) VALUES 
