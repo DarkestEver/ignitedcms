@@ -30,14 +30,17 @@
   
   <script src="<?php echo(base_url()."resources") ?>/js/jscolor/jscolor.js" type="text/javascript"></script>
   
-
+<!-- datatables -->
+  <script src="<?php echo(base_url()."resources") ?>/js/datatables/jquery.dataTables.min.js" type="text/javascript"></script>
   
 
 
  <script type="text/javascript">
    
     $(document).ready(function (event) {
-
+      $('#example').dataTable( {
+      
+    });
      
         
     });
